@@ -7,7 +7,6 @@ stages:
 test:
   stage: test
   script:
-  - cd website
   - yarn install
   - yarn build
   except:
@@ -17,7 +16,6 @@ test:
 pages:
   stage: deploy
   script:
-  - cd website
   - yarn install
   - yarn build
   - mv ./build ../public
