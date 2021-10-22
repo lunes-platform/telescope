@@ -1,4 +1,4 @@
-image: node:15.12-alpine3.13
+image: 14.18.1-alpine3.14
 
 stages:
   - test
