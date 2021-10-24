@@ -1,12 +1,9 @@
 ---
 sidebar_position: 4
 ---
+# Kubernetes in Gitlab Private Projects
 
-# Flask8s
-
-## How to use private images of Gitlab's projects in Kubernetes
-
-**1 -** Step
+## 1 - Step
 
 - Do a login in git.lunes.io with your user and password: `registry.lune.io`
 
@@ -28,7 +25,7 @@ sidebar_position: 4
 cat ~./.docker/config.json | base64 > tmp.txt`
 ```
 
-**2 -** Step
+## 2 - Step
 
 - Create a new object `Secret` with `hash base64` of your credential an save with a `Secret.yaml`:
 

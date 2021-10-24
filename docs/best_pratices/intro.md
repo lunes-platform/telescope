@@ -15,7 +15,7 @@ sidebar_position: 1
 
 **5 -** Write a docs for your changes, **MERGE REQUESTS WITHOUT DOCS WILL BE REJECTED**
 
-**6 -** Generete a new **CHANGELOG** with yours commit using the script python below
+**6 -** Generete a new **CHANGELOG** with yours commit using the script python below - [see how to do](./third.md#how-to-generate-changelog)
 
 ## References
 
