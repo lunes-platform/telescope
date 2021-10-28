@@ -28,7 +28,7 @@ module.exports = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://gitlab.com/lunes/blockchain/docs-lunesblock',
+          href: 'https://git.lunes.io/',
           label: 'GitLab',
           position: 'right',
         },
