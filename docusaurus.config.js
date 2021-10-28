@@ -17,7 +17,7 @@ module.exports = {
       title: 'Lunes Docs',
       logo: {
         alt: 'Lunes logo',
-        src: 'img/logo.svg',
+        src: 'img/lunes.png',
       },
       items: [
         {
