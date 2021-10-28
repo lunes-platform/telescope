@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Lunes Docs',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'This is Lunes!',
   url: 'https://lunes.gitlab.io/blockchain/docs-lunesblock/',
   baseUrl: '/blockchain/lunesdocs/',
   onBrokenLinks: 'throw',
