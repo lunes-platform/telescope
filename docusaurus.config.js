@@ -24,9 +24,9 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'documentation',
+          label: 'Documentation',
         },
-        { to: '/blog', label: 'blog', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://gitlab.com/lunes/blockchain/docs-lunesblock',
           label: 'GitLab',
@@ -54,16 +54,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Facebook',
+              href: 'https://www.facebook.com/lunesplatform/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Instagram',
+              href: 'https://www.instagram.com/lunesplatform/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/lunesplatform',
             },
           ],
         },
