@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Lunes Docs',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'This is Lunes!',
   url: 'https://lunes.gitlab.io/blockchain/docs-lunesblock/',
   baseUrl: '/blockchain/lunesdocs/',
   onBrokenLinks: 'throw',
@@ -24,9 +24,9 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'documentation',
+          label: 'Documentation',
         },
-        { to: '/blog', label: 'blog', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://gitlab.com/lunes/blockchain/docs-lunesblock',
           label: 'GitLab',
@@ -54,16 +54,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Facebook',
+              href: 'https://www.facebook.com/lunesplatform/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Instagram',
+              href: 'https://www.instagram.com/lunesplatform/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/lunesplatform',
             },
           ],
         },
@@ -81,7 +81,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Lunes Doc, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
