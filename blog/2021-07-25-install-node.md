@@ -9,29 +9,34 @@ tags: [Init, Lorem, Ipsum] # Tags desse post
 ---
 
 ### First step
+
 To start you need to clone **installer repository** with *git*.
 
 On terminal:
-```
+
+```bash
 git clone https://github.com/Lunes-platform/install_node.git
 ```
 
 ### Second step
+
 After, simply Run :four_leaf_clover:
 
 ```bash
 ./install_node.py
 ```
+
 Following the steps...
 
 ### Third step
+
 Good, now you have a Lunes Full Node run in your machine, but yet been one step.
 
 If you want earn tax for validated blocks in lunes blockchain you need to add one seed with 5000 Lunes or more into you Lunes Full Node.
 
 Take a seed with **5000 Lunes** or more and **hash** :hash: to **[base58](https://incoherency.co.uk/base58/)**
 
-```
+```text
 seed = "Your Seed With Over Five Thousand LUNES"
 hash_seed_base58 = "21PtJgXkoEopeTriSevpd3qdTNuhtTvUhK6oRv7btCtPpurRARrchG"
 ```
@@ -44,7 +49,7 @@ vim /etc/lunesnode/lunesnode.conf
 
 And modifier the field **seed** :seedling:...
 
-```
+```python
 wallet {
    file = ***
     password = ***
@@ -52,6 +57,6 @@ wallet {
   }
 ```
 
-## Done!
+## Done
 
 Alright, now whenever your machine is **connected to the internet** and your **seed has 5000 lunes or more**, your **lunesfullnode** will be yielding Lunes for you. Remember, the more Lunes your seed has, the more likely you are to close a block and get paid for it, this is a Proof-of-Stake!
