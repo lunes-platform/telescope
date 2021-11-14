@@ -17,7 +17,7 @@ module.exports = {
       title: 'Lunes Docs',
       logo: {
         alt: 'Lunes logo',
-        src: 'img/logo.svg',
+        src: 'img/lunes.png',
       },
       items: [
         {
@@ -28,7 +28,7 @@ module.exports = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://gitlab.com/lunes/blockchain/docs-lunesblock',
+          href: 'https://git.lunes.io/',
           label: 'GitLab',
           position: 'right',
         },
@@ -92,18 +92,6 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
