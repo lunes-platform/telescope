@@ -82,3 +82,29 @@ It is necessary to change the genesis transactions to generate a fork in the net
 4. Add the assignature
 5. Build the project
 6. Up to MAINNET or TESTNET
+
+## Basic Commands
+
+- To run the node:
+
+```
+systemctl start lunesnode.service
+```
+
+- To stop the node:
+
+```
+systemctl stop lunesnode.service
+```
+
+- To restart the node:
+
+```
+systemctl restart lunesnode.service
+```
+
+- To verify the node:
+
+```
+journalctl -fu lunesnode
+```
