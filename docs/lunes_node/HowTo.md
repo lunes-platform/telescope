@@ -53,3 +53,9 @@ In TESTNET is necessary `5000` Lunes.
 In this algorithm, the person responsible for validating a block is randomly drawn.
 
 However the node that has saved(stake) `5000` lunes or more, has more chance of being drawn.
+
+The more Lunes saved (stake), the greater the chance of being drawn to validate a block and receive the reward.
+
+It is also possible to rent (lease) Lunes to full nodes and receive rewards.
+
+When lunes are rented, they **are not transferred**, they are just locked in the staker's wallet.
