@@ -66,3 +66,8 @@ Whoever carries a knot can receive a bet. That way, he can increase the chance o
 
 - Requirements for Leasing: `5000` of Lunes
 
+## How to up a node
+
+1. The choice is made in the field `lunes.blockchain.type`
+2. Modify for `MAINNET` or `TESTNET`
+3. In the field `lunes.network.know-peers` point the network node `["ip:7770"]`
