@@ -6,7 +6,7 @@ module.exports = {
   title: 'Lunes Docs',
   tagline: 'This is Lunes!',
   url: 'https://lunes.gitlab.io/blockchain/docs-lunesblock/',
-  baseUrl: '/blockchain/lunesdocs/',
+  baseUrl: '/production/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

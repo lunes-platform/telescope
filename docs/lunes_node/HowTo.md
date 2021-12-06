@@ -12,14 +12,14 @@ For now, the installation is only supported for Linux.
 
 ## Minimum Requirements
 
-### Minimum
+**Minimum**
 
 - One Lunes seed
 - 2gb Ram
 - 20gb HD
 - 2 Cores
 
-### Ideal
+**Ideal**
 
 - One Lunes seed
 - 4gb RAM
@@ -28,7 +28,7 @@ For now, the installation is only supported for Linux.
 
 ## MainNet and TestNet
 
-### Difference between TestNet and MainNet
+**Difference between TestNet and MainNet**
 
 - MainNet
 
@@ -40,7 +40,7 @@ For now, the installation is only supported for Linux.
 
 ## Amount of Lunes
 
-### Amount necessary for Lunes Node
+**Amount necessary for Lunes Node**
 
 In MAINNET is necessary `5000` Lunes.
 
@@ -48,7 +48,7 @@ In TESTNET is necessary `5000` Lunes.
 
 ## Lease Proof-of-Stake
 
-### Consensus LPOS
+**Consensus LPOS**
 
 In this algorithm, the person responsible for validating a block is randomly drawn.
 
