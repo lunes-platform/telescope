@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# OPERATIONAL SYSTEM
+# Operational System
 
 ## Supported system by node
 
