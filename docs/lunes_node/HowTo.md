@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# How to install
+# How to ⚙️
 
 ## Supported system by node
 
