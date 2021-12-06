@@ -71,3 +71,14 @@ Whoever carries a knot can receive a bet. That way, he can increase the chance o
 1. The choice is made in the field `lunes.blockchain.type`
 2. Modify for `MAINNET` or `TESTNET`
 3. In the field `lunes.network.know-peers` point the network node `["ip:7770"]`
+
+## How to up a private network
+
+It is necessary to change the genesis transactions to generate a fork in the network.
+
+1. Add new genesis address
+2. Run the project
+3. Take the assignature
+4. Add the assignature
+5. Build the project
+6. Up to MAINNET or TESTNET
