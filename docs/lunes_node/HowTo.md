@@ -59,3 +59,10 @@ The more Lunes saved (stake), the greater the chance of being drawn to validate 
 It is also possible to rent (lease) Lunes to full nodes and receive rewards.
 
 When lunes are rented, they **are not transferred**, they are just locked in the staker's wallet.
+
+## Lease - Stake
+
+Whoever carries a knot can receive a bet. That way, he can increase the chance of being drawn, even without adding Lunes to the wallet.
+
+- Requirements for Leasing: `5000` of Lunes
+
