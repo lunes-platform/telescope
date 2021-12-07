@@ -52,7 +52,7 @@ lunes {
 **info**
 - `directory` is a local on your copy from lunesblockchain will be persisted
 - `blockchain.type` type of network your want connect, MAINNET or TESTNET
-- `network.known-peers` in here your should be put a `ip:port` like address of a master-node lunesnode
+- `network.known-peers` in here your should be put a `ip:7770` like address of a lunesnode, for **mainnet** `5.196.155.34:7770` or **testnet** `5.196.155.46:7770`
 - `wallet.password` the password that your wallet will be encrypted
 - `wallet.seed` your seed in `BASE58` hash
 
