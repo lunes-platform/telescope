@@ -26,16 +26,16 @@ LunesNode is a node or server that has the responsibility to maintain and valida
 
 With a LunesNode you become a Lunes Blockchain participant and can provide network resiliency, validate data, and integrate real-world services into the blockchain.
 
-## How to Runnig a LunesNode in MAINNET and TESTNET
+## How to Run a LunesNode in MAINNET and TESTNET
 
 <details>
-  <summary>Lunix</summary>
+  <summary>Linux</summary>
 
 **Get files**
 
-Your need **LunesNode java executable** **[get here](https://github.com/lunes-platform/lunesnode/releases/download/v0.1.4/lunesnode-latest.jar)**
+You need **LunesNode java executable** **[download here](https://github.com/lunes-platform/lunesnode/releases/download/v0.1.4/lunesnode-latest.jar)**
 
-Now your need also a set a config file with your want.
+Now you need also a set a config file with you want.
 
 ```HOCON
 lunes {
@@ -50,16 +50,16 @@ lunes {
 ```
 
 **info**
-- `directory` is a local on your copy from lunesblockchain will be persisted
-- `blockchain.type` type of network your want connect, MAINNET or TESTNET
+- `directory` is the file where your Lunes Blockchain will download with according to your `WorkingDirectory`
+- `blockchain.type` type of network you want connect, MAINNET or TESTNET
 - `network.known-peers` in here your should be put a `ip:7770` like address of a lunesnode, for **mainnet** `5.196.155.34:7770` or **testnet** `5.196.155.46:7770`
 - `wallet.password` the password that your wallet will be encrypted
 - `wallet.seed` your seed in `BASE58` hash
 
 **after save this file with `lunesnode.conf` name**
-* your can be take a **completely conf**  in **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+* you can be take a **completely conf**  in **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
-Now your machine shold have files:
+Now your machine should have files:
 ```
 lunesnode.conf
 lunesnode-latest.jar
@@ -70,7 +70,7 @@ lunesnode-latest.jar
 java -jar lunesnode-lates.jar
 ```
 
-If your want enable LunesNode to run forever, save this file in `/etc/systemd/system/` with `lunesnode.service`
+If you want enable LunesNode to run forever, save this file in `/etc/systemd/system/` with `lunesnode.service`
 ```
 [Unit]
 Description=Lunes Node Blockchain
