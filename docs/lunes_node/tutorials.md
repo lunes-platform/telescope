@@ -57,7 +57,7 @@ lunes {
 - `wallet.seed` your seed in `BASE58` hash
 
 **after save this file with `lunesnode.conf` name**
-* your can be take a **completely conf**  in **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+* you can be take a **completely conf**  in **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
 Now your machine should have files:
 ```
