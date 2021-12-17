@@ -28,8 +28,8 @@ module.exports = {
         },
         { href: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/lunes-platform/',
-          label: 'GitHub',
+          label: 'GitLab',
+          href: 'https://git.lunes.io/blockchain/production/docs',
           position: 'right',
         },
       ],
