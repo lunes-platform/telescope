@@ -58,11 +58,11 @@ module.exports = {
             },
             {
               label: 'DEX API mainnet',
-              href: 'https://lunesnode.lunes.io/',
+              href: 'https://5.196.155.34:4444',
             },
             {
               label: 'DEX API testnet',
-              href: 'https://lunesnode.lunes.io/',
+              href: 'http://5.196.155.46:4444',
             },
           ],
         },
