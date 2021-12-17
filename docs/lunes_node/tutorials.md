@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Tutorials ✅
+# ✅ Tutorials
 
 
 ## How to LunesNode works

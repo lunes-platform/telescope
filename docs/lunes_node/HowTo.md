@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# How to ⚙️
+#  🔩 FAQ
 
 ## Supported system by node
 
