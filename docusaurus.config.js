@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Lunes Docs',
-  tagline: 'This is Lunes!',
+  tagline: 'The Future in the Present!',
   url: 'https://lunes.gitlab.io/blockchain/docs-lunesblock/',
   baseUrl: '/production/docs/',
   onBrokenLinks: 'throw',
@@ -26,10 +26,10 @@ module.exports = {
           position: 'left',
           label: 'Documentation',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { href: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://git.lunes.io/',
-          label: 'GitLab',
+          href: 'https://github.com/lunes-platform/',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -38,15 +38,31 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Sites',
+          title: 'Development',
           items: [
             {
-              label: 'Lunes',
-              to: 'https://lunes.io/',
+              label: 'Blockchain API mainnet',
+              href: 'https://lunesnode.lunes.io/',
             },
             {
-              label: 'Explorer',
-              to: 'https://blockexplorer.lunes.io/',
+              label: 'Blockchain API testnet',
+              href: 'https://lunesnode-testnet.lunes.io/',
+            },
+            {
+              label: 'BlockExplorer mainnet',
+              href: 'https://blockexplorer.lunes.io/',
+            },
+            {
+              label: 'BlockExplorer testnet',
+              href: 'https://blockexplorer-testnet.lunes.io/',
+            },
+            {
+              label: 'DEX API mainnet',
+              href: 'https://lunesnode.lunes.io/',
+            },
+            {
+              label: 'DEX API testnet',
+              href: 'https://lunesnode.lunes.io/',
             },
           ],
         },
@@ -62,21 +78,54 @@ module.exports = {
               href: 'https://www.instagram.com/lunesplatform/',
             },
             {
+              label: 'Telegram',
+              href: 'https://t.me/LunesPlatformPT',
+            },
+            {
+              label: 'Linkedin',
+              href: 'https://www.linkedin.com/company/lunes-platform',
+            },
+            {
               label: 'Twitter',
               href: 'https://twitter.com/lunesplatform',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Exchanges',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Coin Market Cap',
+              href: 'https://coinmarketcap.com/pt-br/currencies/lunes/',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'BankCex',
+              href: 'https://bankcex.com/exchange-advanced.html?symbol=LUNES-BTC',
+            },
+            {
+              label: 'Vindax',
+              href: 'https://bankcex.com/exchange-advanced.html?symbol=LUNES-BTC',
+            },
+            {
+              label: 'CatEx',
+              href: 'https://www.catex.io/trading/LUNES/BTC',
+            },
+          ],
+        },
+        {
+          title: 'Projects',
+          items: [
+            {
+              label: 'Lunes Node',
+              href: 'https://github.com/lunes-platform/lunesnode',
+            },
+            {
+              label: 'Lunes Py',
+              href: 'https://github.com/lunes-platform/lunespy',
+            },
+            {
+              label: 'Lunes Js',
+              href: 'https://github.com/lunes-platform/lunesjs',
             },
           ],
         },
