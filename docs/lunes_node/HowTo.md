@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-#  🔩 FAQ
+# 🔩 FAQ
 
 ## Supported system by node
 
