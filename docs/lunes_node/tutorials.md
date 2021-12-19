@@ -4,7 +4,6 @@ sidebar_position: 1
 
 # ✅ Tutorials
 
-
 ## How to LunesNode works
 
 The Lunes Blockchain is a decentralized and distributed network based on the LPoS consensus algorithm. This network can be mainnet or testnet, in mainnet the nodes work with real values of tokens, currencies, NFT and assets. On the other hand, testnet has "fake" tokens to provide a test environment.
@@ -88,54 +87,51 @@ SyslogIdentifier=lunesnode
 [Install]
 WantedBy=multi-user.target
 ```
+
 </details>
 
 <details>
   <summary>Docker</summary>
 
-```
-Coming Soon
-```
+Ready on 26/12/2021 - Issue -> [#8](https://git.lunes.io/blockchain/production/docs/-/issues/8)
+
 </details>
 
 <details>
   <summary>MacOs</summary>
 
-```
-Coming Soon
-```
-</details>
+Ready on 26/12/2021 - Issue -> [#11](https://git.lunes.io/blockchain/production/docs/-/issues/11)
 
+</details>
 
 <details>
   <summary>Windows</summary>
 
-```
-Coming Soon
-```
+Ready on 26/12/2021 - Issue -> [#10](https://git.lunes.io/blockchain/production/docs/-/issues/10)
+
 </details>
 
-
 ## How to Create a Custom Network (Fork)
-
 
 <details>
   <summary>Private Lunes Blockchain</summary>
 
 **Changed genesis transactions**
 
-```
+```txt
 Coming Soon
 ```
+
 **Runnig and get signature of genesis transactions**
 
-```
+```txt
 Coming Soon
 ```
+
 **Add signature and Build your Node**
 
-```
+```txt
 Coming Soon
 ```
-</details>
 
+</details>
