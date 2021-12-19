@@ -113,23 +113,24 @@ Ready on 26/12/2021 - Issue -> [#10](https://git.lunes.io/blockchain/production/
 
 ## How to Create a Custom Network (Fork)
 
-
 <details>
   <summary>Private Lunes Blockchain</summary>
 
 **Changed genesis transactions**
 
-```
+```txt
 Coming Soon
 ```
+
 **Runnig and get signature of genesis transactions**
 
-```
+```txt
 Coming Soon
 ```
+
 **Add signature and Build your Node**
 
-```
+```txt
 Coming Soon
 ```
 
