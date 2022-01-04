@@ -6,7 +6,7 @@ module.exports = {
   title: 'Lunes Docs',
   tagline: 'The Future in the Present!',
   url: 'https://lunes.gitlab.io/blockchain/docs-lunesblock/',
-  baseUrl: '/production/docs/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

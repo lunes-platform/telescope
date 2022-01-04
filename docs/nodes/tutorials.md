@@ -11,18 +11,6 @@ In the dev language, mainnet is prod and testnet is dev.
 
 LunesNode is a node or server that has the responsibility to maintain and validate the blockchain, broadcast new transactions and provide an api for interaction and integration with the network.
 
-```py
-# The Network e.g.
-                     o 
-                    / \
-          o _ o    o   \
-         /     \  /     \
-        o _____ o ______ o ___ o
-       / \     / \            /
-     o    \   /   \          /
-            o _____ o       o
-```
-
 With a LunesNode you become a Lunes Blockchain participant and can provide network resiliency, validate data, and integrate real-world services into the blockchain.
 
 ## How to Run a LunesNode in MAINNET and TESTNET
