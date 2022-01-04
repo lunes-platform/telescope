@@ -7,8 +7,8 @@ const katex = require('rehype-katex');
 module.exports = {
   title: 'Lunes Docs',
   tagline: 'The Future in the Present!',
-  url: 'https://lunes.gitlab.io/blockchain/docs-lunesblock/',
-  baseUrl: '/docs/',
+  url: 'https://git.lunes.io/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
