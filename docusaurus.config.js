@@ -28,7 +28,7 @@ module.exports = {
           position: 'left',
           label: 'Documentation',
         },
-        { href: '/blog', label: 'Blog', position: 'left' },
+        // { href: '/blog', label: 'Blog', position: 'left' },
         {
           label: 'GitHub',
           href: 'https://github.com/lunes-platform/',
