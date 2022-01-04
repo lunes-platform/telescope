@@ -8,7 +8,7 @@ module.exports = {
   title: 'Lunes Docs',
   tagline: 'The Future in the Present!',
   url: 'https://git.lunes.io/',
-  baseUrl: '/tescope/',
+  baseUrl: '/telescope/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
