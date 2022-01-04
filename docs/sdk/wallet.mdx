@@ -1,0 +1,90 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# 🔐 Wallet
+
+A **Wallet** is a set of one or more **Accounts**, like an email account, which instead of having _address@provider_ and _password_ has:
+
+- seed: list of random words used to generate keys and address
+- chain: blockchain chain, can be mainnet or testnet
+- nonce: number used to generate new keys with the same seed
+- private key: key used to sign transactions
+- public key: key derived from the private key used to derive the address
+- address: public address used to receive assets
+
+The account can be generated for testnet or mainnet. **This will only change the address**,
+The seed used to create an account must be a list of 12 or more words,
+it is possible to generate a seed with up to 2048 words.
+The change of two equal accounts to be created is $\frac 1 {2048^n}$ where $n$ is the number of words.
+You can generate a account passing your seed, private_key, public_key, address as **parameters** or nothing to generate a new one.
+Changing the nonce is possible generate 4 294 967 295 different account with only one seed.
+
+## Create a _new_ Wallet
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```py
+from lunespy.client.wallet import Account
+
+wallet = Account()
+
+print(wallet)
+```
+
+```
+seed
+  └── phone dove naive find erase grant right cause garden struggle robust ball
+hash_seed
+  └── 8KkNgKuZBrYxYVCX1i1Cr8z3jX8xrtVvA8nJzfvS9ScSm2iLGLFjS1hatmu8JqHWWXY4qN5r9ukuUe45aDT9QAkCPWmFonjUiHW3
+nonce
+  └── 0
+network
+  └── mainnet
+private_key
+  └── 4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL
+public_key
+  └── 6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8
+address
+  └── 37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL
+```
+
+  </TabItem>
+  <TabItem value="JavaScript" label="JavaScript">
+
+```js
+const lunes_wasm = require("lunes_wasm");
+
+const wallet = new lunes_wasm.Account();
+
+console.log(wallet);
+```
+
+```js
+{
+  seed: 'phone dove naive find erase grant right cause garden struggle robust ball',
+  hash_seed: '8KkNgKuZBrYxYVCX1i1Cr8z3jX8xrtVvA8nJzfvS9ScSm2iLGLFjS1hatmu8JqHWWXY4qN5r9ukuUe45aDT9QAkCPWmFonjUiHW3',
+  nonce: 0,
+  network: 'mainnet',
+  network_id: '1',
+  private_key: '4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL',
+  public_key: '6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8',
+  address: '37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL'
+}
+```
+
+</TabItem>
+
+  <TabItem value="Rust" label="Rust">
+
+```
+Comming Soon
+```
+
+  </TabItem>
+</Tabs>
+

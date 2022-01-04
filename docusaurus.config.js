@@ -1,5 +1,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -28,8 +30,8 @@ module.exports = {
         },
         { href: '/blog', label: 'Blog', position: 'left' },
         {
-          label: 'GitLab',
-          href: 'https://git.lunes.io/blockchain/production/docs',
+          label: 'GitHub',
+          href: 'https://github.com/lunes-platform/',
           position: 'right',
         },
       ],
@@ -113,24 +115,24 @@ module.exports = {
           ],
         },
         {
-          title: 'Projects',
+          title: 'Repositories',
           items: [
             {
               label: 'Lunes Node',
               href: 'https://github.com/lunes-platform/lunesnode',
             },
             {
-              label: 'Lunes Py',
+              label: 'lunespy',
               href: 'https://github.com/lunes-platform/lunespy',
             },
             {
-              label: 'Lunes Js',
-              href: 'https://github.com/lunes-platform/lunesjs',
+              label: 'lunes_wasm',
+              href: 'https://github.com/lunes-platform/lunes_wasm',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Lunes Doc, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Lunes Doc, Inc. Build with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
@@ -141,10 +143,23 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        docs: {
+          path: 'docs',
+          remarkPlugins: [math],
+          rehypePlugins: [katex]
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css',
+      integrity:
+        'sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc',
+      crossorigin: 'anonymous',
+    },
   ],
 };
