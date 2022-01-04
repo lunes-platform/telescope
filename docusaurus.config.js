@@ -8,7 +8,7 @@ module.exports = {
   title: 'Lunes Docs',
   tagline: 'The Future in the Present!',
   url: 'https://git.lunes.io/',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -122,12 +122,12 @@ module.exports = {
               href: 'https://github.com/lunes-platform/lunesnode',
             },
             {
-              label: 'lunespy',
-              href: 'https://github.com/lunes-platform/lunespy',
-            },
-            {
               label: 'lunes_wasm',
               href: 'https://github.com/lunes-platform/lunes_wasm',
+            },
+            {
+              label: 'lunespy',
+              href: 'https://github.com/lunes-platform/lunespy',
             },
           ],
         },
