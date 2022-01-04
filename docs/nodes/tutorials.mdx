@@ -2,6 +2,9 @@
 sidebar_position: 1
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # ✅ Tutorials
 
 ## How to LunesNode works
@@ -15,8 +18,8 @@ With a LunesNode you become a Lunes Blockchain participant and can provide netwo
 
 ## How to Run a LunesNode in MAINNET and TESTNET
 
-<details>
-  <summary>Linux</summary>
+<Tabs>
+  <TabItem value="Linux 🐧" label="Linux 🐧" default>
 
 **Get files**
 
@@ -28,7 +31,7 @@ Now you need also a set a config file with you want.
 lunes {
   directory = ""
 
-  blockchain.type = 
+  blockchain.type =
   network.known-peers = [""]
 
   wallet.password = ""
@@ -37,6 +40,7 @@ lunes {
 ```
 
 **info**
+
 - `directory` is the file where your Lunes Blockchain will download with according to your `WorkingDirectory`
 - `blockchain.type` type of network you want connect, MAINNET or TESTNET
 - `network.known-peers` in here your should be put a `ip:7770` like address of a lunesnode, for **mainnet** `5.196.155.34:7770` or **testnet** `5.196.155.46:7770`
@@ -44,20 +48,24 @@ lunes {
 - `wallet.seed` your seed in `BASE58` hash
 
 **after save this file with `lunesnode.conf` name**
-* you can be take a **completely conf**  in **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+
+- you can be take a **completely conf** in **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
 Now your machine should have files:
+
 ```
 lunesnode.conf
 lunesnode-latest.jar
 ```
 
 **Run**
+
 ```
 java -jar lunesnode-lates.jar
 ```
 
 If you want enable LunesNode to run forever, save this file in `/etc/systemd/system/` with `lunesnode.service`
+
 ```
 [Unit]
 Description=Lunes Node Blockchain
@@ -75,29 +83,21 @@ SyslogIdentifier=lunesnode
 [Install]
 WantedBy=multi-user.target
 ```
+  </TabItem>
 
-</details>
+  <TabItem value="MacOs 🍎" label="MacOs 🍎">
+    Comming Soon
+  </TabItem>
 
-<details>
-  <summary>Docker</summary>
+  <TabItem value="Docker 🐳" label="Docker 🐳">
+    Comming Soon
+  </TabItem>
 
-Ready on 26/12/2021 - Issue -> [#8](https://git.lunes.io/blockchain/production/docs/-/issues/8)
-
-</details>
-
-<details>
-  <summary>MacOs</summary>
-
-Ready on 26/12/2021 - Issue -> [#11](https://git.lunes.io/blockchain/production/docs/-/issues/11)
-
-</details>
-
-<details>
-  <summary>Windows</summary>
-
-Ready on 26/12/2021 - Issue -> [#10](https://git.lunes.io/blockchain/production/docs/-/issues/10)
-
-</details>
+  <TabItem value="Windows 🗑" label="Windows 🗑">
+    Comming Soon
+  </TabItem>
+  
+</Tabs>
 
 ## How to Create a Custom Network (Fork)
 
