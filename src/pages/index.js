@@ -17,7 +17,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Explore the Lune's World 🌎
+            Explore the Lune's Universe ✨
           </Link>
         </div>
       </div>

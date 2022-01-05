@@ -5,7 +5,7 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Telescope',
+  title: '🔭 Telescope',
   tagline: 'The Future in the Present!',
   url: 'https://git.lunes.io/',
   baseUrl: '/telescope/',
