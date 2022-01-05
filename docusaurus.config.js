@@ -133,7 +133,7 @@ module.exports = {
           title: 'Repositories',
           items: [
             {
-              label: 'Lunes Node',
+              label: 'lunesnode',
               href: 'https://github.com/lunes-platform/lunesnode',
             },
             {
