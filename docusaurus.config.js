@@ -5,7 +5,7 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Lunes Docs',
+  title: 'Telescope',
   tagline: 'The Future in the Present!',
   url: 'https://git.lunes.io/',
   baseUrl: '/telescope/',
@@ -13,10 +13,25 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'lunes-platform',
-  projectName: 'docs-lunes',
+  projectName: 'telescope',
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+      switchConfig: {
+        darkIcon: '🌙',
+        darkIconStyle: {
+          marginLeft: '1px',
+        },
+        lightIcon: '☀️',
+        lightIconStyle: {
+          marginLeft: '1px',
+        },
+      },
+    },
     navbar: {
-      title: 'Lunes Docs',
+      title: 'Telescope',
       logo: {
         alt: 'Lunes logo',
         src: 'img/lunes.png',
@@ -132,7 +147,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Lunes Doc, Inc. Build with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Lunes Telescope. Build with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,

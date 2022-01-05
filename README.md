@@ -1,6 +1,5 @@
-# Documentação do LunesBlock
+# Lunes Telescope
 
-[![pipeline status](https://git.lunes.io/blockchain/production/docs/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/production/docs/-/commits/main)
+[![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
 
-
-See [Lunes Docs](https://blockchain.lunes.io/production/docs/)
+See [Telescope](https://blockchain.lunes.io/telescope/)
