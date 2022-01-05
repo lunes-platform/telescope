@@ -137,8 +137,8 @@ module.exports = {
               href: 'https://github.com/lunes-platform/lunesnode',
             },
             {
-              label: 'lunes_wasm',
-              href: 'https://github.com/lunes-platform/lunes_wasm',
+              label: 'lunescrab',
+              href: 'https://github.com/lunes-platform/lunescrab',
             },
             {
               label: 'lunespy',

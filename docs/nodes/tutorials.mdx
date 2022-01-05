@@ -7,23 +7,23 @@ import TabItem from "@theme/TabItem";
 
 # ✅ Tutorials
 
-## How to LunesNode works
+## How to Lunes Node works
 
 The Lunes Blockchain is a decentralized and distributed network based on the LPoS consensus algorithm. This network can be mainnet or testnet, in mainnet the nodes work with real values of tokens, currencies, NFT and assets. On the other hand, testnet has "fake" tokens to provide a test environment.
 In the dev language, mainnet is prod and testnet is dev.
 
-LunesNode is a node or server that has the responsibility to maintain and validate the blockchain, broadcast new transactions and provide an api for interaction and integration with the network.
+Lunes Node is a node or server that has the responsibility to maintain and validate the blockchain, broadcast new transactions and provide an api for interaction and integration with the network.
 
-With a LunesNode you become a Lunes Blockchain participant and can provide network resiliency, validate data, and integrate real-world services into the blockchain.
+With a Lunes Node you become a Lunes Blockchain participant and can provide network resiliency, validate data, and integrate real-world services into the blockchain.
 
-## How to Run a LunesNode in MAINNET and TESTNET
+## How to Run a Lunes Node in MAINNET and TESTNET
 
 <Tabs>
   <TabItem value="🐧 Linux" label="🐧 Linux" default>
 
 **Get files**
 
-You need **LunesNode java executable** **[download here](https://github.com/lunes-platform/lunesnode/releases/download/v0.1.4/lunesnode-latest.jar)**
+You need **Lunes Node java executable** **[download here](https://github.com/lunes-platform/lunesnode/releases/download/v0.1.4/lunesnode-latest.jar)**
 
 Now you need also a set a config file with you want.
 
@@ -64,7 +64,7 @@ lunesnode-latest.jar
 java -jar lunesnode-lates.jar
 ```
 
-If you want enable LunesNode to run forever, save this file in `/etc/systemd/system/` with `lunesnode.service`
+If you want enable Lunes Node to run forever, save this file in `/etc/systemd/system/` with `lunesnode.service`
 
 ```
 [Unit]
@@ -89,7 +89,7 @@ WantedBy=multi-user.target
 <TabItem value="🐳 Docker" label="🐳 Docker">
 
 ```
-docker run registry/luneslunesnode:0.1.2-mainnet
+docker run lunesplatform/node:0.1.2-mainnet
 ```
 
 </TabItem>
@@ -102,7 +102,7 @@ Comming Soon
 
 </TabItem>
 
-<TabItem value="🗑 Windows" label="🗑 Windows">
+<TabItem value="🪟 Windows" label="🪟 Windows">
 
 ```
 Comming Soon
