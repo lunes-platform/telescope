@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem";
 
 ## Send _Lunes_
 
-Only for send Lunes asset you dont must be pass asset_id parameter in TranferToken.
+Only for **send Lunes asset** you don't need to pass `asset_id` parameter in TransferToken.
 **The transfer costs 0.001Lunes**
 
 <Tabs>
