@@ -76,10 +76,10 @@ module.exports = {
       ],
       logo: {
         alt: 'Lunes Platform Logo',
-        src: 'img/favicon.svg',
+        src: 'img/logo.svg',
         href: 'https://lunes.io',
-        width: 50,
-        height: 50,
+        width: 35,
+        height: 35,
       },
       copyright: `Copyright © ${new Date().getFullYear()} Lunes 🔭 Telescope. Build with 💜 and Docusaurus.`,
     },
