@@ -29,8 +29,8 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Lunes ${siteConfig.title.slice(3)}`}
-      description="Description will go into a meta tag in <head />">
+      title={"Home"}
+      description="Lunes Platform Documentation Site">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

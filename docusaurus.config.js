@@ -31,7 +31,7 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'Telescope',
+      title: 'Home',
       logo: {
         alt: 'Lunes logo',
         src: 'img/lunes.png',
@@ -40,14 +40,18 @@ module.exports = {
         {
           type: 'doc',
           docId: 'releases',
-          position: 'left',
           label: 'Documentation',
+          position: 'left',
         },
-        // { href: '/blog', label: 'Blog', position: 'left' },
+        {
+          label: 'Lunes Blockchain',
+          href: 'https://blockexplorer.lunes.io',
+          position: 'right'
+        },
         {
           label: 'GitHub',
           href: 'https://github.com/lunes-platform/',
-          position: 'right',
+          position: 'right'
         },
       ],
     },
@@ -55,99 +59,27 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Development',
+          title: 'API',
           items: [
             {
-              label: 'Blockchain API mainnet',
+              label: 'mainnet',
               href: 'https://lunesnode.lunes.io/',
             },
             {
-              label: 'Blockchain API testnet',
+              label: 'testnet',
               href: 'https://lunesnode-testnet.lunes.io/',
-            },
-            {
-              label: 'BlockExplorer mainnet',
-              href: 'https://blockexplorer.lunes.io/',
-            },
-            {
-              label: 'BlockExplorer testnet',
-              href: 'https://blockexplorer-testnet.lunes.io/',
-            },
-            {
-              label: 'DEX API mainnet',
-              href: 'https://5.196.155.34:4444',
-            },
-            {
-              label: 'DEX API testnet',
-              href: 'http://5.196.155.46:4444',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Facebook',
-              href: 'https://www.facebook.com/lunesplatform/',
-            },
-            {
-              label: 'Instagram',
-              href: 'https://www.instagram.com/lunesplatform/',
-            },
-            {
-              label: 'Telegram',
-              href: 'https://t.me/LunesPlatformPT',
-            },
-            {
-              label: 'Linkedin',
-              href: 'https://www.linkedin.com/company/lunes-platform',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/lunesplatform',
-            },
-          ],
-        },
-        {
-          title: 'Exchanges',
-          items: [
-            {
-              label: 'Coin Market Cap',
-              href: 'https://coinmarketcap.com/pt-br/currencies/lunes/',
-            },
-            {
-              label: 'BankCex',
-              href: 'https://bankcex.com/exchange-advanced.html?symbol=LUNES-BTC',
-            },
-            {
-              label: 'Vindax',
-              href: 'https://bankcex.com/exchange-advanced.html?symbol=LUNES-BTC',
-            },
-            {
-              label: 'CatEx',
-              href: 'https://www.catex.io/trading/LUNES/BTC',
-            },
-          ],
-        },
-        {
-          title: 'Repositories',
-          items: [
-            {
-              label: 'lunesnode',
-              href: 'https://github.com/lunes-platform/lunesnode',
-            },
-            {
-              label: 'lunescrab',
-              href: 'https://github.com/lunes-platform/lunescrab',
-            },
-            {
-              label: 'lunespy',
-              href: 'https://github.com/lunes-platform/lunespy',
-            },
+            }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Lunes Telescope. Build with Docusaurus.`,
+      logo: {
+        alt: 'Lunes Platform Logo',
+        src: 'img/lunes.png',
+        href: 'https://lunes.io',
+        width: 50,
+        height: 50,
+      },
+      copyright: `Copyright © ${new Date().getFullYear()} Lunes 🔭 Telescope. Build with 💜 and Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
