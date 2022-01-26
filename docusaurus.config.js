@@ -39,7 +39,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'releases',
           position: 'left',
           label: 'Documentation',
         },
@@ -152,6 +152,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      additionalLanguages: ['systemd']
     },
   },
   presets: [
