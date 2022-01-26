@@ -1,17 +1,7 @@
 image: node:14.18.1-alpine3.14
 
 stages:
-  - test
   - deploy
-
-test:
-  stage: test
-  script:
-  - yarn install
-  - yarn build
-  except:
-    - main
-
 
 pages:
   stage: deploy
