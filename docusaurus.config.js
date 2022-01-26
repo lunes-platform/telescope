@@ -34,7 +34,7 @@ module.exports = {
       title: 'Home',
       logo: {
         alt: 'Lunes logo',
-        src: 'img/lunes.png',
+        src: 'img/logo.svg',
       },
       items: [
         {
@@ -74,7 +74,7 @@ module.exports = {
       ],
       logo: {
         alt: 'Lunes Platform Logo',
-        src: 'img/lunes.png',
+        src: 'img/favicon.svg',
         href: 'https://lunes.io',
         width: 50,
         height: 50,
