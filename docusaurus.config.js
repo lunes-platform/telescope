@@ -11,7 +11,7 @@ module.exports = {
   baseUrl: '/telescope/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   organizationName: 'lunes-platform',
   projectName: 'telescope',
   themeConfig: {
