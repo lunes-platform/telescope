@@ -64,7 +64,7 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
   ```
   **For running**
   ```
-  java -jar lunesnode-lates.jar
+  java -jar lunesnode-latest.jar lunesnode.conf
   ```
 
   **If you want enable Lunes Node to run forever, create a service**
@@ -111,9 +111,62 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
 <TabItem value="🪟 Windows" label="🪟 Windows">
 
+
+  Your need install **[java8](http://www.google.com/search?q=how+to+install+java+8+linux)**
+
+  Get your version of **[Lunes Node](./releases)**
+
+
+  <details>
+    <summary>Lunes Node config file</summary>
+
+
+  ```yml title="lunesnode.conf"
+  # Minimum needed to run
+  lunes {
+    # where will the blockchain be persisted
+    directory = "./"
+
+    # choice your chain MAINNET or TESTNET
+    blockchain.type = ""
+
+    # put ip:port of any node in chain that you choiced
+    # MAINNET 5.196.155.34:7770
+    # TESTNET 5.196.155.46:7770
+    network.known-peers = [""]
+
+    # It will hide (encrypt) your seed
+    wallet.password = ""
+
+    # Your seed hashed in BASED58
+    wallet.seed = ""
+  }
+  ```
+
+  - Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+
+
+  </details>
+
+  **Files tree**
+  ```js title="/path/mylunesblockchain/"
+    ├── lunesnode-latest.jar
+    └── lunesnode.conf
+  ```
+  **For running**
+  ```
+  java -jar lunesnode-latest.jar lunesnode.conf
+  ```
+
+  **If you want enable Lunes Node to run forever, create a service**
+
+  <details>
+    <summary>Systemd config file</summary>
+
   ```
   Comming Soon
   ```
+  </details>
 
 </TabItem>
 
