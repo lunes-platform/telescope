@@ -35,6 +35,8 @@ module.exports = {
       logo: {
         alt: 'Lunes logo',
         src: 'img/logo.svg',
+        width: 23,
+        height: 23,
       },
       items: [
         {
