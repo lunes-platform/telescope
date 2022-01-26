@@ -5,7 +5,6 @@ sidebar_position: 3
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-
 # 📮 Transactions
 
 ## Send _Lunes_
@@ -53,7 +52,6 @@ tx.send()
 tx.history
 ```
 
-
 <details>
   <summary>successful response</summary>
 
@@ -85,6 +83,7 @@ tx.history
   }
 }
 ```
+
 </details>
 
 <details>
@@ -122,6 +121,7 @@ tx.history
   }
 }
 ```
+
 </details>
   </TabItem>
 
@@ -165,7 +165,6 @@ tx.send()
 tx.history
 ```
 
-
 <details>
   <summary>successful response</summary>
 
@@ -196,6 +195,7 @@ tx.history
     "feeAsset": null
   }
 }
+
 ```
 </details>
 
@@ -234,14 +234,13 @@ tx.history
   }
 }
 ```
+
 </details>
   </TabItem>
 </Tabs>
 
-
-
-
 ## Send _Token_
+
 By passing an `asset_id` parameter it is possible to send any asset that has already been issued in lunes-blockchain.
 **The transfer costs 0.001Lunes**
 
@@ -291,7 +290,6 @@ tx.send()
 tx.history
 ```
 
-
 <details>
   <summary>successful response</summary>
 
@@ -323,6 +321,7 @@ tx.history
   }
 }
 ```
+
 </details>
 
 <details>
@@ -360,6 +359,7 @@ tx.history
   }
 }
 ```
+
 </details>
   </TabItem>
 
@@ -408,7 +408,6 @@ tx.send()
 tx.history
 ```
 
-
 <details>
   <summary>successful response</summary>
 
@@ -440,6 +439,7 @@ tx.history
   }
 }
 ```
+
 </details>
 
 <details>
@@ -477,6 +477,7 @@ tx.history
   }
 }
 ```
+
 </details>
   </TabItem>
 
