@@ -12,7 +12,8 @@
 	"extensions": [
 		"davidanson.vscode-markdownlint",
 		"eamodio.gitlens",
-		"donjayamanne.githistory"
+		"donjayamanne.githistory",
+		"silvenon.mdx"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
