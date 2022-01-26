@@ -11,7 +11,7 @@ module.exports = {
   baseUrl: '/telescope/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   organizationName: 'lunes-platform',
   projectName: 'telescope',
   themeConfig: {
@@ -35,6 +35,8 @@ module.exports = {
       logo: {
         alt: 'Lunes logo',
         src: 'img/logo.svg',
+        width: 23,
+        height: 23,
       },
       items: [
         {
@@ -74,10 +76,10 @@ module.exports = {
       ],
       logo: {
         alt: 'Lunes Platform Logo',
-        src: 'img/favicon.svg',
+        src: 'img/logo.svg',
         href: 'https://lunes.io',
-        width: 50,
-        height: 50,
+        width: 35,
+        height: 35,
       },
       copyright: `Copyright © ${new Date().getFullYear()} Lunes 🔭 Telescope. Build with 💜 and Docusaurus.`,
     },
