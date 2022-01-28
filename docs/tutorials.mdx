@@ -28,14 +28,12 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
   Get your version of **[Lunes Node](./releases)**
 
-
   <details>
     <summary>Lunes Node config file</summary>
 
-
-  ```yml title="lunesnode.conf"
-  # Minimum needed to run
-  lunes {
+```yml title="lunesnode.conf"
+# Minimum needed to run
+lunes {
     # where will the blockchain be persisted
     directory = "./"
 
@@ -55,18 +53,21 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
   }
   ```
 
-  - Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+- Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
+</details>
 
-  </details>
 
   **Files tree**
+
   ```js title="/path/mylunesblockchain/"
     ├── lunesnode-latest.jar
     └── lunesnode.conf
   ```
+
   **For running**
-  ```
+
+  ```bash
   java -jar lunesnode-latest.jar lunesnode.conf
   ```
 
@@ -92,13 +93,14 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
   [Install]
   WantedBy = multi-user.target
   ```
+
   </details>
 
   </TabItem>
 
 <TabItem value="🐳 Docker" label="🐳 Docker">
 
-  ```
+  ```text
   Comming Soon
   ```
 
@@ -106,7 +108,7 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
 <TabItem value="🍎 MacOs" label="🍎 MacOs">
 
-  ```
+  ```text
   Comming Soon
   ```
 
@@ -114,15 +116,20 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
 <TabItem value="🪟 Windows" label="🪟 Windows">
 
+  You have to install **[java8](https://www.java.com/pt-BR/download/)**
 
-  Your need install **[java8](http://www.google.com/search?q=how+to+install+java+8+linux)**
+- After install, verify your version of java in **CMD** line
+  
+  ```bash
+  java -version
+  ```
 
-  Get your version of **[Lunes Node](./releases)**
+  Get a version of **[Lunes Node](./releases)**
 
+  Inside your folder make a file with a name **lunesnode.conf** with this content: 
 
   <details>
     <summary>Lunes Node config file</summary>
-
 
   ```yml title="lunesnode.conf"
   # Minimum needed to run
@@ -148,28 +155,49 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
   - Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
-
   </details>
 
   **Files tree**
-  ```js title="/path/mylunesblockchain/"
+
+  PATH = the path where you saved the file 
+
+  ```js title="/PATH/mylunesblockchain/"
     ├── lunesnode-latest.jar
     └── lunesnode.conf
   ```
-  **For running**
+
+  - After getting a version o Lunes Node, in **CMD** line, get inside in your folder when you save this files:
+ 
+  ```bash
+  cd /PATH/mylunesblockchain
   ```
+  
+  **For running**
+
+  ```bash
   java -jar lunesnode-latest.jar lunesnode.conf
   ```
 
-  **If you want enable Lunes Node to run forever, create a service**
+  **If you want enable Lunes Node to run forever, create a service:**
 
-  <details>
-    <summary>Systemd config file</summary>
+  In the line of **CMD** type it:
+  
+  ```cmd
+  sc create LunesNode binPath= "java -jar PATH\lunesnode-latest.jar PATH\lunesnode.conf" start= auto DisplayName= LunesNode
+  ```
 
+  To verify a log of the Node, open the CMD with admin
+  Entry in your folder:
+
+  ```cmd
+  cd /PATH/mylunesblockchain
   ```
-  Comming Soon
+
+  and type it:
+
+  ```cmd
+  type lunes.log
   ```
-  </details>
 
 </TabItem>
 
