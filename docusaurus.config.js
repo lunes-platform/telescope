@@ -8,7 +8,7 @@ module.exports = {
   title: '🔭 Telescope',
   tagline: 'The Future in the Present!',
   url: 'https://git.lunes.io/',
-  baseUrl: '/telescope/',
+  baseUrl: 'blockchain/telescope/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
