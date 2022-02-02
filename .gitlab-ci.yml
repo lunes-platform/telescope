@@ -1,18 +1,28 @@
-image: node:latest
+mage: node:15.12-alpine3.13
 
-cache:
-  paths:
-    - node_modules/
-    - public/
-    - .cache/
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+  - cd website
+  - yarn install
+  - yarn build
+  rules:
+    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
 
 pages:
   stage: deploy
   script:
-    - yarn install
-    - yarn build:gitlab
+  - cd website
+  - yarn install
+  - yarn build
+  - mv ./build ../public
   artifacts:
-      paths:
-        - public
-  only:
-    - master
+    paths:
+    - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
