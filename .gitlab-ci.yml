@@ -1,26 +1,19 @@
-image: node:16.13.2-alpine3.14
-
-stages:
-  - test
-  - deploy
-
-TestValidatingForMR:
-  stage: test
-  script:
-  - yarn install
-  - yarn build
-  except:
-    - main
+image: node:latest
 
 
-DeployPage:
+cache:
+  paths:
+    - node_modules/
+    - public/
+    - .cache/
+
+pages:
   stage: deploy
   script:
-  - yarn install
-  - yarn build
-  - mv ./build ./public
+    - yarn install
+    - yarn build:gitlab
   artifacts:
-    paths:
-    - public
+      paths:
+        - public
   only:
-    - main
+    - master
