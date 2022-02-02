@@ -1,28 +1,26 @@
-image: node:15.12-alpine3.13
+image: node:16.13.2-alpine3.14
 
 stages:
   - test
   - deploy
 
-test:
+TestValidatingForMR:
   stage: test
   script:
-  - cd website
   - yarn install
   - yarn build
-  rules:
-    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
+  except:
+    - main
 
-pages:
+
+DeployPage:
   stage: deploy
   script:
-  - cd website
   - yarn install
   - yarn build
-  - mv ./build ../public
+  - mv ./build ./public
   artifacts:
     paths:
     - public
-  rules:
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-
+  only:
+    - main
