@@ -178,24 +178,62 @@ lunes {
   java -jar lunesnode-latest.jar lunesnode.conf
   ```
 
+  **LOG Verification**
+
+  - In cmd, inside your folder, type it:
+
+  ```bash
+  cd PATH\mylunesblockchain\log
+  ```
+
   **If you want enable Lunes Node to run forever, create a service:**
 
-  In the line of **CMD** type it:
+  - On folder of your node, create one file with a name **node.bat** with this content:
   
-  ```cmd
-  sc create LunesNode binPath= "java -jar PATH\lunesnode-latest.jar PATH\lunesnode.conf" start= auto DisplayName= LunesNode
+  ```bash
+  java -jar PATH\mylunesblockchain\lunesnode-latest.jar PATH\mylunesblockchain\lunesnode.conf
   ```
 
-  To verify a log of the Node, open the CMD with admin and Entry in your folder:
+  - Download a version 2.24 of NSSM (2014-08-31) **[here](http://nssm.cc/release/nssm-2.24.zip)**
 
-  ```cmd
-  cd /PATH/mylunesblockchain
+  - Unzip the file
+
+  - Open the ***CMD*** with a administrator
+
+  - Verify your windows version 64 or 32 bits
+
+    For 64 bits type it:
+    
+    ```bash
+      cd PATH\nssm-2.24\win64
+    ```
+
+    For 32 bits type it:
+    
+    ```bash
+      cd PATH\nssm-2.24\win32
+    ```
+
+  - Type the commands bellow
+
+  ```bash
+  nssm.exe install "LunesNode" "PATH\mylunesblockchain\node.bat"
+  ```
+  
+  ```bash
+  nssm set LunesNode DisplayName "LunesNode"
   ```
 
-  and type it:
+  ```bash
+  nssm set LunesNode AppDirectory "PATH\mylunesblockchain"
+  ```
 
-  ```cmd
-  type lunes.log
+  ```bash
+  nssm set LunesNode Description "start lunes node with node.bat : java -jar PATH/lunesnode-latest.jar PATH/lunesnode.conf"
+  ```
+
+  ```bash
+  nssm set LunesNode Start SERVICE_AUTO_START
   ```
 
 </TabItem>
