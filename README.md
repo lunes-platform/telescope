@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://lunes.io/">
+    <img alt="Lunes" src="https://lunes.io/wp-content/uploads/2018/12/lunes-logo.svg" width="250" />
+  </a>
+</p>
+
 # Lunes Telescope
 
 [![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
@@ -5,11 +11,7 @@
 
 See [Telescope](https://blockchain.lunes.io/telescope/)
 
-<p align="center">
-  <a href="https://lunes.io/">
-    <img alt="Lunes" src="https://lunes.io/wp-content/uploads/2018/12/lunes-logo.svg" width="250" />
-  </a>
-</p>
+
 
 ## Readme
 ## License
