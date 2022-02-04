@@ -5,6 +5,12 @@
 
 See [Telescope](https://blockchain.lunes.io/telescope/)
 
+<p align="center">
+  <a href="https://lunes.io/">
+    <img alt="Lunes" src="https://lunes.io/wp-content/uploads/2018/12/lunes-logo.svg" width="250" />
+  </a>
+</p>
+
 ## Readme
 ## License
 
