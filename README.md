@@ -5,6 +5,21 @@
 
 See [Telescope](https://blockchain.lunes.io/telescope/)
 
+## Readme
+## License
+
+## Changelog
+
+## Contributing
+
+
+## Credits
+
+## CI to build and test the project
+
+## Dockerfile for development environment
+
+
 ----- RASCUNHO ------
 O QUE PRECISA ADICIONAR 
 readme
