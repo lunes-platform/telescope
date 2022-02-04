@@ -15,6 +15,11 @@
     <img alt="Twitter: Lunes Platform" src="https://badgen.net/twitter/follow/lunesplatform?icon=twitter&label=follow @LunesPlatform" />
   </a>
 
+  <a href="https://t.me/LunesPlatformPT" target="_blank">
+    <img alt="Telegram" src="https://badgen.net/badge/icon/Lunes%20Platform?icon=telegram&label=Telegram"/>
+  </a>
+
+
 See [Telescope](https://blockchain.lunes.io/telescope/)
 
 
