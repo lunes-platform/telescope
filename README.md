@@ -1,7 +1,11 @@
 
-<img src="static/img/lunes.png" align="center" alt="Lunes" width="100"/>
+<p align="center">
+  <a href="https://lunes.io">
+    <img alt="Lunes" src="static/img/lunes.png" width="100" />
+  </a>
+</p>
 
-# Lunes Telescope
+# 🔭 Lunes Telescope
 
 [![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
 
