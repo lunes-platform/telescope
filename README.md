@@ -5,11 +5,11 @@
   </a>
 </p>
 
-# 🔭 Lunes Telescope
+# 🔭 [Telescope](https://blockchain.lunes.io/telescope/)
 
 
 [![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
-
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 <br>
   <a href="https://twitter.com/LunesPlatform" target="_blank">
     <img alt="Twitter: Lunes Platform" src="https://badgen.net/twitter/follow/lunesplatform?icon=twitter&label=follow @LunesPlatform" />
@@ -20,12 +20,14 @@
   </a>
 
 
-See [Telescope](https://blockchain.lunes.io/telescope/)
 
 
 
 ## Readme
 ## License
+
+- blockchain e  github - apache
+- backend e frontend - privada
 
 ## Changelog
 
@@ -33,6 +35,8 @@ See [Telescope](https://blockchain.lunes.io/telescope/)
 
 
 ## Credits
+
+- https://gist.github.com/nicolasdao/a7adda51f2f185e8d2700e1573d8a633#2-apache
 
 ## CI to build and test the project
 
