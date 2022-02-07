@@ -34,9 +34,10 @@ Telescope is licensed under [Apache License v2.0](LICENSE)
 
 ## Contributors
 
-* 
-* 
-*  
+* [@olivmath](https://git.lunes.io/olivmath)
+* [@xonfps](https://git.lunes.io/xonfps)
+* [@nunes](https://git.lunes.io/nunes)
+* [@joelEsteves](https://git.lunes.io/joelEsteves)
 
 ## Credits
 
