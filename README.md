@@ -22,12 +22,6 @@
 
 
 
-
-
-## License
-Telescope is licensed under [Apache License v2.0](LICENSE)
-
-
 ## Changelog
 
 ## Contributing
@@ -43,9 +37,9 @@ Telescope is licensed under [Apache License v2.0](LICENSE)
 
 - Made with [Docusaurus](https://docusaurus.io/)
 
-## CI to build and test the project
+## License
+Telescope is licensed under [Apache License v2.0](LICENSE)
 
-## Dockerfile for development environment
 
 
 ----- RASCUNHO ------
