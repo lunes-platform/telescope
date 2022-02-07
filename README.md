@@ -29,7 +29,7 @@ The changelog process for this project is described [here](CHANGELOG.md).
 ## Documentation
 The Telescope documentations is hosted at [Telescope page](https://blockchain.lunes.io/telescope/)
 ## Contributing
-
+Telescope is still under development. Contributions are always welcome! Please follow the [Developers Guide](CONTRIBUTING.md) if you want to help.
 ## Contributors
 
 * [@olivmath](https://git.lunes.io/olivmath)
