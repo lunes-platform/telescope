@@ -10,7 +10,8 @@
 
 [![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-![Status](https://img.shields.io/static/v1?label=STATUS&message=under%20development&color=GREEN&style=for-the-badge)
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/lunes-platform)
+[![Status(https://img.shields.io/static/v1?label=STATUS&message=under%20development&color=GREEN&style=for-the-badge)]
 
 <br><br>
   <a href="https://twitter.com/LunesPlatform" target="_blank">
