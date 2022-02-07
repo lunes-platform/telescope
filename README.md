@@ -11,10 +11,7 @@
 [![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/lunes-platform)
-
-
-
-<br><br>
+<br>
   <a href="https://twitter.com/LunesPlatform" target="_blank">
     <img alt="Twitter: Lunes Platform" src="https://badgen.net/twitter/follow/lunesplatform?icon=twitter&label=follow @LunesPlatform" />
   </a>  
