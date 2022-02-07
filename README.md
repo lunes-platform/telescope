@@ -25,9 +25,8 @@
 
 ## Readme
 ## License
+Telescope is licensed under [Apache License v2.0](LICENSE)
 
-- blockchain e  github - apache
-- backend e frontend - privada
 
 ## Changelog
 
@@ -37,6 +36,7 @@
 ## Credits
 
 - https://gist.github.com/nicolasdao/a7adda51f2f185e8d2700e1573d8a633#2-apache
+- https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061
 
 ## CI to build and test the project
 
@@ -63,3 +63,5 @@ what is the project license
 who is working on the project
 link to Telescope
 add shields and badges
+- blockchain e  github - apache
+- backend e frontend - privada
