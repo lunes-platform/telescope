@@ -19,6 +19,8 @@
     <img alt="Telegram" src="https://badgen.net/badge/icon/Lunes%20Platform?icon=telegram&label=Telegram"/>
   </a>
 
+[![Twitter Follow]https://img.shields.io/twitter/follow/LunesPlatform?style=plastic&logo=twitter)](https://twitter.com/LunesPlatform)
+
 Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials, everything you want in one place! See [Telescope page](https://blockchain.lunes.io/telescope/)
 ## Changelog
 
