@@ -19,9 +19,7 @@
     <img alt="Telegram" src="https://badgen.net/badge/icon/Lunes%20Platform?icon=telegram&label=Telegram"/>
   </a>
 
-
-
-
+Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials, everything you want in one place!
 ## Changelog
 
 ## Contributing
