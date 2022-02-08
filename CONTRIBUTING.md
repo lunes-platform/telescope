@@ -11,3 +11,14 @@ If you have a suggestion that would make this better, please fork the repo and c
 4. Commit your code using coventional commit, COMMITS OUTSIDE THE CONVENTIONAL WILL BE REJECTED
 5. Write a docs for your changes, MERGE REQUESTS WITHOUT DOCS WILL BE REJECTED
 
+# Commits Types
+
+feat: (new feature for the user, not a new feature for build script)
+fix: (bug fix for the user, not a fix to a build script)
+docs: (changes to the documentation)
+style: (formatting, missing semi colons, etc; no production code change)
+refactor: (refactoring production code, eg. renaming a variable)
+test: (adding missing tests, refactoring tests; no production code change)
+chore: (updating grunt tasks etc; no production code change)
+perf: A code change that improves performance
+
