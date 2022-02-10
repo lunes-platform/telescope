@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+description: Lunes Tutorial about lunes node, lunes wallet, about everything!
+keywords: [how to install lunes node, how lunes node work, lunes node tutorial, how to miner in lunes network, 
+lunes network, lunes blockchain, lunes plataform miner, how to make a POS in lunes plataform]
 ---
 
 import Tabs from "@theme/Tabs";
@@ -25,14 +28,12 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
   Get your version of **[Lunes Node](./releases)**
 
-
   <details>
     <summary>Lunes Node config file</summary>
 
-
-  ```yml title="lunesnode.conf"
-  # Minimum needed to run
-  lunes {
+```yml title="lunesnode.conf"
+# Minimum needed to run
+lunes {
     # where will the blockchain be persisted
     directory = "./"
 
@@ -52,18 +53,21 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
   }
   ```
 
-  - Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+- Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
+</details>
 
-  </details>
 
   **Files tree**
+
   ```js title="/path/mylunesblockchain/"
     ├── lunesnode-latest.jar
     └── lunesnode.conf
   ```
+
   **For running**
-  ```
+
+  ```bash
   java -jar lunesnode-latest.jar lunesnode.conf
   ```
 
@@ -89,13 +93,14 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
   [Install]
   WantedBy = multi-user.target
   ```
+
   </details>
 
   </TabItem>
 
 <TabItem value="🐳 Docker" label="🐳 Docker">
 
-  ```
+  ```text
   Comming Soon
   ```
 
@@ -103,7 +108,7 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
 <TabItem value="🍎 MacOs" label="🍎 MacOs">
 
-  ```
+  ```text
   Comming Soon
   ```
 
@@ -111,15 +116,20 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
 <TabItem value="🪟 Windows" label="🪟 Windows">
 
+  You have to install **[java8](https://www.java.com/pt-BR/download/)**
 
-  Your need install **[java8](http://www.google.com/search?q=how+to+install+java+8+linux)**
+- After install, verify your version of java in **CMD** line
+  
+  ```bash
+  java -version
+  ```
 
-  Get your version of **[Lunes Node](./releases)**
+  Get a version of **[Lunes Node](./releases)**
 
+  Inside your folder make a file with a name **lunesnode.conf** with this content: 
 
   <details>
     <summary>Lunes Node config file</summary>
-
 
   ```yml title="lunesnode.conf"
   # Minimum needed to run
@@ -145,28 +155,86 @@ With a Lunes Node you become a Lunes Blockchain participant and can provide netw
 
   - Complete config file **[here](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
 
-
   </details>
 
   **Files tree**
-  ```js title="/path/mylunesblockchain/"
+
+  PATH = the path where you saved the file 
+
+  ```js title="/PATH/mylunesblockchain/"
     ├── lunesnode-latest.jar
     └── lunesnode.conf
   ```
-  **For running**
+
+  - After getting a version o Lunes Node, in **CMD** line, get inside in your folder when you save this files:
+ 
+  ```bash
+  cd /PATH/mylunesblockchain
   ```
+  
+  **For running**
+
+  ```bash
   java -jar lunesnode-latest.jar lunesnode.conf
   ```
 
-  **If you want enable Lunes Node to run forever, create a service**
+  **LOG Verification**
 
-  <details>
-    <summary>Systemd config file</summary>
+  - In cmd, inside your folder, type it:
 
+  ```bash
+  cd PATH\mylunesblockchain\log
   ```
-  Comming Soon
+
+  **If you want enable Lunes Node to run forever, create a service:**
+
+  - On folder of your node, create one file with a name **node.bat** with this content:
+  
+  ```bash
+  java -jar PATH\mylunesblockchain\lunesnode-latest.jar PATH\mylunesblockchain\lunesnode.conf
   ```
-  </details>
+
+  - Download a version 2.24 of NSSM (2014-08-31) **[here](http://nssm.cc/release/nssm-2.24.zip)**
+
+  - Unzip the file
+
+  - Open the ***CMD*** with a administrator
+
+  - Verify your windows version 64 or 32 bits
+
+    For 64 bits type it:
+    
+    ```bash
+      cd PATH\nssm-2.24\win64
+    ```
+
+    For 32 bits type it:
+    
+    ```bash
+      cd PATH\nssm-2.24\win32
+    ```
+
+  - Type the commands bellow
+
+  ```bash
+  nssm.exe install "LunesNode" "PATH\mylunesblockchain\node.bat"
+  ```
+  
+  ```bash
+  nssm set LunesNode DisplayName "LunesNode"
+  ```
+
+  ```bash
+  nssm set LunesNode AppDirectory "PATH\mylunesblockchain"
+  ```
+
+  ```bash
+  nssm set LunesNode Description "start lunes node with node.bat : java -jar PATH/lunesnode-latest.jar PATH/lunesnode.conf"
+  ```
+
+  ```bash
+  nssm set LunesNode Start SERVICE_AUTO_START
+  ```
 
 </TabItem>
 
