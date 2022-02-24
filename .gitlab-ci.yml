@@ -2,7 +2,6 @@ image: node:16
 
 pages:
   before_script:
-    - cd my-website
     - yarn install
   script:
     - ls
