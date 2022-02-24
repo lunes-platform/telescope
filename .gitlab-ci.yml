@@ -1,26 +1,15 @@
-image: node:16.13.2-alpine3.14
+image: node:16
 
-stages:
-  - test
-  - deploy
-
-TestValidatingForMR:
-  stage: test
+pages:
+  before_script:
+    - cd my-website
+    - yarn install
   script:
-  - yarn install
-  - yarn build
-  except:
-    - main
-
-
-DeployPage:
-  stage: deploy
-  script:
-  - yarn install
-  - yarn build
-  - mv ./build ./public
+    - ls
+    - yarn build
+    - mv build ../public
   artifacts:
     paths:
-    - public
+      - public
   only:
     - main
