@@ -8,7 +8,7 @@ module.exports = {
   title: '🔭 Telescope',
   tagline: 'The Future in the Present!',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/telescope/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
