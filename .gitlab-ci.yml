@@ -1,14 +1,27 @@
-image: node:16
+image: node:16.13.2-alpine3.14
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+  #- cd telescope
+  - yarn install
+  - yarn build
+  except:
+    - main
 
 pages:
-  before_script:
-    - yarn install
+  stage: deploy
   script:
-    - ls
-    - yarn build
-    - mv build ../public
+  #- cd telescope
+  - yarn install
+  - yarn build
+  - mv ./build ../public
   artifacts:
     paths:
-      - public
+    - public
   only:
     - main
