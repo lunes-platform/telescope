@@ -1,33 +1,34 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './HomepageFeatures.module.css';
+import Translate, {translate} from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: 'Lunes Plataform',
+    title: <Translate>Lunes Platform</Translate>,
     Svg: require('../../static/img/frame.svg').default,
     description: (
-      <>
+      <Translate>
         Your Future is here!
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Lunes Documentation',
+    title: <Translate>Lunes Documentation</Translate>,
     Svg: require('../../static/img/frame3.svg').default,
     description: (
-      <>
+      <Translate>
         All our features in one place.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Lunes Blockchain',
+    title: <Translate>Lunes Blockchain</Translate>,
     Svg: require('../../static/img/frame2.svg').default,
     description: (
-      <>
+      <Translate>
         Decentralization is our theme.
-      </>
+      </Translate>
     ),
   },
 ];
