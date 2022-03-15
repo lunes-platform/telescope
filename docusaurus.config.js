@@ -18,17 +18,7 @@ module.exports = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: false,
-      switchConfig: {
-        darkIcon: '🌙',
-        darkIconStyle: {
-          marginLeft: '1px',
-        },
-        lightIcon: '☀️',
-        lightIconStyle: {
-          marginLeft: '1px',
-        },
-      },
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'Home',
@@ -39,6 +29,10 @@ module.exports = {
         height: 23,
       },
       items: [
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           type: 'doc',
           docId: 'releases',
@@ -112,4 +106,20 @@ module.exports = {
       crossorigin: 'anonymous',
     },
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      pt: {
+        label: 'Português',
+        direction: 'ltr',
+        htmlLang: 'pt-BR',
+      },
+    },
+  },
 };

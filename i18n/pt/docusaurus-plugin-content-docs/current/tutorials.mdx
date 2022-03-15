@@ -1,0 +1,246 @@
+---
+sidebar_position: 1
+description: Tutoriais sobre os produtos Lunes!
+keywords: [como instalar lunes node, como o lunes node funciona, como minerar na rede lunes, 
+como fazer POS na lunes platform, how to install lunes node, how lunes node work, lunes node tutorial, how to miner in lunes network, 
+lunes network, lunes blockchain, lunes plataform miner, how to make a POS in lunes plataform]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# 📝 Tutoriais
+
+## Como o Lunes Node funciona
+
+A Blockchain da Lunes é uma rede descentralizada e distribuida baseada no consenso de algoritmo LPos. 
+Essa rede pode ser mainnet ou testnet, na mainnet os nodes trabalham com os seus reais valores de tokens, 
+moedas, NFT e ativos. Por outro lado, a testnet são os "faalsos" tokens feitos para efeito de teste.
+Na linguagem de Dev, mainnet é a prod e testnet é dev.
+
+Lunes Node é um node ou servidor responsável por manter e validar a blockchain, relatar novas transações
+e providenciar uma api para interação e integração da rede.
+
+Com o Lunes Node você se torna um participante da Lunes Blockchain e pode prover resiliência na rede,
+validar dados, e integrar o serviços da vida real na blockchain.
+
+## Como Instalar
+
+<Tabs>
+  <TabItem value="🐧 Linux" label="🐧 Linux" default>
+
+  Você deve instalar **[java8](http://www.google.com/search?q=how+to+install+java+8+linux)**
+
+  Escolha sua versão do **[Lunes Node](./releases)**
+
+  <details>
+    <summary>Conteúdo do arquivo Lunes Node</summary>
+
+```yml title="lunesnode.conf"
+# Minímo necessário para funcionar
+lunes {
+    # aqui é onde a blockchain ficará armazenada
+    directory = "./"
+
+    # escolha sua chain MAINNET ou TESTNET
+    blockchain.type = ""
+
+    # coloque o ip:port para qualquer node na chain que você escolheu
+    # MAINNET 5.196.155.34:7770
+    # TESTNET 5.196.155.46:7770
+    network.known-peers = [""]
+
+    # Aqui vai proteger(criptografar) sua seed
+    wallet.password = ""
+
+    # Sua seed criptografada em BASED58
+    wallet.seed = ""
+  }
+  ```
+
+- Arquivo de configuração completo **[aqui](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+
+</details>
+
+
+  **Arquitetura da Pasta**
+
+  ```js title="/path/mylunesblockchain/"
+    ├── lunesnode-latest.jar
+    └── lunesnode.conf
+  ```
+
+  **Para iniciar**
+
+  ```bash
+  java -jar lunesnode-latest.jar lunesnode.conf
+  ```
+
+  **Para rodar o Lunes Node pra sempre, crie um serviço**
+
+  <details>
+    <summary>Conteúdo do arquivo Systemd </summary>
+
+  ```nome do arquivo systemd ="/etc/systemd/system/lunesnode.service"
+  [Unit]
+  Description = Lunes Node Blockchain
+  After = network.target
+
+  [Service]
+  WorkingDirectory = /path/mylunesblockchain/
+  ExecStart = /usr/bin/java -jar lunesnode-latest.jar lunesnode.conf
+  Restart = always
+  RestartSec = 30s
+  StandardOutput = journal
+  StandardError = journal
+  SyslogIdentifier = lunesnode
+
+  [Install]
+  WantedBy = multi-user.target
+  ```
+
+  </details>
+
+  </TabItem>
+
+<TabItem value="🐳 Docker" label="🐳 Docker">
+
+  ```text
+  Em breve...
+  ```
+
+</TabItem>
+
+<TabItem value="🍎 MacOs" label="🍎 MacOs">
+
+  ```text
+  Em breve...
+  ```
+
+</TabItem>
+
+<TabItem value="🪟 Windows" label="🪟 Windows">
+
+  Você deve instalar o **[java8](https://www.java.com/pt-BR/download/)**
+
+- Depois da instalação verifique sua versão do java na linha do **CMD**
+
+  ```bash
+  java -version
+  ```
+
+  Escolha sua versão do **[Lunes Node](./releases)**
+
+  Por dentro da sua pasta faça um arquivo com o nome **lunesnode.conf** com esse conteúdo: 
+
+  <details>
+    <summary>Conteúdo do arquivo Lunes Node</summary>
+
+  ```yml title="lunesnode.conf"
+    # Minímo necessário para funcionar
+    lunes {
+    # aqui onde a blockchain será armazenada
+    directory = "./"
+
+    # selecione sua chain MAINNET ou TESTNET
+    blockchain.type = ""
+
+    # coloque o ip:port para qualquer node na chain que você escolheu
+    # MAINNET 5.196.155.34:7770
+    # TESTNET 5.196.155.46:7770
+    network.known-peers = [""]
+
+    # aqui vai proteger(criptografar) sua seed
+    wallet.password = ""
+
+    # sua seed criptografa em BASED58
+    wallet.seed = ""
+  }
+  ```
+
+  - Arquivo de configuração completo **[aqui](https://github.com/lunes-platform/lunesnode/blob/master/src/main/resources/application.conf)**
+
+  </details>
+
+  **Arquitetura da pasta**
+
+  PATH = é o caminho onde seu arquivo está salvo 
+
+  ```js title="/PATH/mylunesblockchain/"
+    ├── lunesnode-latest.jar
+    └── lunesnode.conf
+  ```
+
+  - Depois de escolher sua versão do Lunes Node, na linha de comando, entre na pasta em que você salvou os arquivos:
+
+  ```bash
+  cd /PATH/mylunesblockchain
+  ```
+  
+  **Para iniciar**
+
+  ```bash
+  java -jar lunesnode-latest.jar lunesnode.conf
+  ```
+
+  **Verificação de LOG**
+
+  - Na linha de comando, dentro da sua pasta, digite isso:
+
+  ```bash
+  cd PATH\mylunesblockchain\log
+  ```
+
+  **Se você quiser habilitar o Lunes Node para semrpe, crie um serviço:**
+
+  - Na pasta do seu node, crie um arquivo com o nome de **node.bat** com esse conteúdo:
+
+  ```bash
+  java -jar PATH\mylunesblockchain\lunesnode-latest.jar PATH\mylunesblockchain\lunesnode.conf
+  ```
+
+  - Baixe a versão 2.24 do NSSM (2014-08-31) **[aqui](http://nssm.cc/release/nssm-2.24.zip)**
+
+  - Descompacte o arquivo
+
+  - Abra o ***CMD*** como administrador
+
+  - Verifique se a versão do seu windows é 64 ou 32 bits
+
+    Para 64 bits digite isso:
+    
+    ```bash
+      cd PATH\nssm-2.24\win64
+    ```
+
+    Para 32 bits digite isso:
+    
+    ```bash
+      cd PATH\nssm-2.24\win32
+    ```
+
+  - Digite os comandos abaixo:
+
+  ```bash
+  nssm.exe install "LunesNode" "PATH\mylunesblockchain\node.bat"
+  ```
+  
+  ```bash
+  nssm set LunesNode DisplayName "LunesNode"
+  ```
+
+  ```bash
+  nssm set LunesNode AppDirectory "PATH\mylunesblockchain"
+  ```
+
+  ```bash
+  nssm set LunesNode Description "start lunes node with node.bat : java -jar PATH/lunesnode-latest.jar PATH/lunesnode.conf"
+  ```
+
+  ```bash
+  nssm set LunesNode Start SERVICE_AUTO_START
+  ```
+
+</TabItem>
+
+</Tabs>
