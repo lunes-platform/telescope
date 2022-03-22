@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Suivant",
+    "description": "The label for version current"
+  },
+  "sidebar.defaultSidebar.category.SDK": {
+    "message": "SDK",
+    "description": "The label for category SDK in sidebar defaultSidebar"
+  }
+}
