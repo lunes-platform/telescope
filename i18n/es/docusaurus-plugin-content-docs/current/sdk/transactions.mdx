@@ -1,0 +1,487 @@
+---
+sidebar_position: 3
+description: Cómo hacer transacciones con Lunes SDK
+keywords: [transacciones , blockchain, lunes, sdk, transacciones de lunes sdk, lunes sdk, generar wallet,
+generar transacción en lunes,  transacciones lunes,  transacciones en lunes wallet]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# 📮 Transacciones
+
+## Enviar _Lunes_
+
+Solo para **enviar activos de Lunes**, no necesita pasar el parámetro `asset_id` en TransferToken.
+**Los costos de transferencia 0.001Lunes**
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```py
+from lunespy.client.transactions.transfer import TransferToken
+from lunespy.client.wallet import Account
+
+
+# Generar el wallet
+sender_wallet = Account(
+  seed="phone dove naive find erase grant right cause garden struggle robust ball"
+)
+receiver_wallet = Account()
+
+# Configura la transacción para transferir tus tokens
+tx = TransferToken(
+  sender=sender_wallet.public_key,
+  receiver=receiver_wallet.address,
+  amount=100
+)
+
+# Para validar pase de datos
+tx.ready
+
+# Puede mostrar su transacción sin procesar
+tx.transaction
+
+# Necesita firmar su transacción con la cuenta del remitente antes de enviar
+tx.sign(sender_wallet.private_key)
+
+# Puede mostrar su transacción sin procesar de signo
+tx.transaction
+
+# Ahora puedes enviar tu transacción de transferencia
+tx.send()
+
+# Para ver la respuesta de la transacción, use
+tx.history
+```
+
+<details>
+  <summary>respuesta exitosa</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": true,
+  "response": {
+    "type": 4,
+    "id": "DFh451K5ot7J8sjobVsrMcAQiFnRESXG6C19UnKsS5Mi",
+    "sender": "37bpECMv85nUr14YEfkyyyWKN2gYgrCfDhX",
+    "senderPublicKey": "FYvp88jP2xC21JCQfeSxUkg6qmLSGs5x8TBr5V3pT2NH",
+    "fee": 100000,
+    "timestamp": 1631473695599,
+    "signature": "2VwHiMtN2CUqJuMiaGqhsM1Qorhz7jMbjGb5wxN9Hb7WnLZXAwPPTEYjht8Ey8FjDt8739EFnuSvwMiwioqJ3XXd",
+    "recipient": "37hqrPGmzzT6xk5GFXbc9u5yYnRmBWSJuTY",
+    "assetId": null,
+    "amount": 100,
+    "feeAsset": null
+  }
+}
+```
+
+</details>
+
+<details>
+  <summary>respuesta de falla</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": false,
+  "response": {
+    "error": 112,
+    "message": "State check failed. Reason: Attempt to transfer unavailable funds: Transaction application leads to negative lunes balance to (at least) temporary negative state, current balance equals 0, spends equals -100100, result is -100100",
+    "tx": {
+      "type": 4,
+      "id": "EzQVTZGavd9jmWprnADWMK3dya8ZeF1dAF4JNYmAkkH1",
+      "sender": "37QqvghNGWrUWSjALayGjCnT1nC28wXV6pL",
+      "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+      "fee": 100000,
+      "timestamp": 1631473467403,
+      "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+      "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+      "assetId": null,
+      "amount": 100,
+      "feeAsset": null
+    }
+  }
+}
+```
+
+</details>
+  </TabItem>
+
+  <TabItem value="JavaScript" label="JavaScript" default>
+
+```js
+const lunescrab = require("lunescrab")
+const TransferToken = lunescrab.client.transactions.transfer.TransferToken
+const Account = lunescrab.client.wallet.Account
+
+
+// Generar el wallet
+const senderWallet = Account({
+  seed:"phone dove naive find erase grant right cause garden struggle robust ball"
+})
+const receiverWallet = Account({})
+
+// Configura la transacción para transferir tus tokens
+var tx = TransferToken({
+  from: senderWallet.publicKey,
+  to: receiverWallet.address,
+  amount: 100
+})
+
+// Para validar pase de datos
+tx.ready
+
+// Puede mostrar su transacción sin procesar
+tx.transaction
+
+// Necesita firmar su transacción con la cuenta del remitente antes de enviar
+tx.sign(senderWallet.privateKey)
+
+// Puede mostrar su transacción sin procesar de signo
+tx.transaction
+
+// Ahora puedes enviar tu transacción de transferencia
+tx.send()
+
+// Para ver la respuesta de la transacción, use
+tx.history
+```
+
+<details>
+  <summary>respuesta exitosa</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": true,
+  "response": {
+    "type": 4,
+    "id": "DFh451K5ot7J8sjobVsrMcAQiFnRESXG6C19UnKsS5Mi",
+    "sender": "37bpECMv85nUr14YEfkyyyWKN2gYgrCfDhX",
+    "senderPublicKey": "FYvp88jP2xC21JCQfeSxUkg6qmLSGs5x8TBr5V3pT2NH",
+    "fee": 100000,
+    "timestamp": 1631473695599,
+    "signature": "2VwHiMtN2CUqJuMiaGqhsM1Qorhz7jMbjGb5wxN9Hb7WnLZXAwPPTEYjht8Ey8FjDt8739EFnuSvwMiwioqJ3XXd",
+    "recipient": "37hqrPGmzzT6xk5GFXbc9u5yYnRmBWSJuTY",
+    "assetId": null,
+    "amount": 100,
+    "feeAsset": null
+  }
+}
+
+```
+</details>
+
+<details>
+  <summary>respuesta de falla</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": false,
+  "response": {
+    "error": 112,
+    "message": "State check failed. Reason: Attempt to transfer unavailable funds: Transaction application leads to negative lunes balance to (at least) temporary negative state, current balance equals 0, spends equals -100100, result is -100100",
+    "tx": {
+      "type": 4,
+      "id": "EzQVTZGavd9jmWprnADWMK3dya8ZeF1dAF4JNYmAkkH1",
+      "sender": "37QqvghNGWrUWSjALayGjCnT1nC28wXV6pL",
+      "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+      "fee": 100000,
+      "timestamp": 1631473467403,
+      "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+      "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+      "assetId": null,
+      "amount": 100,
+      "feeAsset": null
+    }
+  }
+}
+```
+
+</details>
+  </TabItem>
+</Tabs>
+
+## Enviar _Token_
+
+Al pasar un parámetro `asset_id`, es posible enviar cualquier activo que ya se haya emitido en lunes-blockchain.
+**El traslado cuesta 0.001Lunes**
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```py
+from lunespy.client.transactions.transfer import TransferToken
+from lunespy.client.wallet import Account
+
+
+# Generar el wallet
+sender_wallet = Account(
+  seed="phone dove naive find erase grant right cause garden struggle robust ball"
+)
+receiver_wallet = Account()
+
+
+# Conseguir su Asset Id, NFT Id o Token Id
+token = "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY"
+
+
+# Configura la transacción para transferir tus tokens
+tx = TransferToken(
+  sender=sender_wallet.public_key,
+  receiver=receiver_wallet.address,
+  amount=100,
+  asset_id=token
+)
+
+# Para validar pase de datos
+tx.ready
+
+# Puede mostrar su transacción sin procesar
+tx.transaction
+
+# Necesita firmar su transacción antes de enviar
+tx.sign(sender_wallet.private_key)
+
+# Puede mostrar su transacción sin procesar de signo
+tx.transaction
+
+# Ahora puedes enviar tu transacción de transferencia
+tx.send()
+
+# Para ver la respuesta de la transacción, use
+tx.history
+```
+
+<details>
+  <summary>respuesta exitosa</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": true,
+  "response": {
+    "type": 4,
+    "id": "DFh451K5ot7J8sjobVsrMcAQiFnRESXG6C19UnKsS5Mi",
+    "sender": "37bpECMv85nUr14YEfkyyyWKN2gYgrCfDhX",
+    "senderPublicKey": "FYvp88jP2xC21JCQfeSxUkg6qmLSGs5x8TBr5V3pT2NH",
+    "fee": 100000,
+    "timestamp": 1631473695599,
+    "signature": "2VwHiMtN2CUqJuMiaGqhsM1Qorhz7jMbjGb5wxN9Hb7WnLZXAwPPTEYjht8Ey8FjDt8739EFnuSvwMiwioqJ3XXd",
+    "recipient": "37hqrPGmzzT6xk5GFXbc9u5yYnRmBWSJuTY",
+    "assetId": "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY",
+    "amount": 100,
+    "feeAsset": null
+  }
+}
+```
+
+</details>
+
+<details>
+  <summary>respuesta de falla</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": false,
+  "response": {
+    "error": 112,
+    "message": "State check failed. Reason: Attempt to transfer unavailable funds: Transaction application leads to negative lunes balance to (at least) temporary negative state, current balance equals 0, spends equals -100100, result is -100100",
+    "tx": {
+      "type": 4,
+      "id": "EzQVTZGavd9jmWprnADWMK3dya8ZeF1dAF4JNYmAkkH1",
+      "sender": "37QqvghNGWrUWSjALayGjCnT1nC28wXV6pL",
+      "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+      "fee": 100000,
+      "timestamp": 1631473467403,
+      "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+      "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+      "assetId": "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY",
+      "amount": 100,
+      "feeAsset": null
+    }
+  }
+}
+```
+
+</details>
+  </TabItem>
+
+  <TabItem value="JavaScript" label="JavaScript" default>
+
+```js
+const lunescrab = require("lunescrab")
+const TransferToken = lunescrab.client.transactions.transfer import TransferToken
+const Account = lunescrab.client.wallet import Account
+
+
+// Conseguir su Asset Id, NFT Id o Token Id
+token = "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY"
+
+
+// Generar el wallet
+const senderWallet = Account({
+  seed:"phone dove naive find erase grant right cause garden struggle robust ball"
+})
+const receiverWallet = Account({})
+
+// Configura la transacción para transferir tus tokens
+var tx = TransferToken({
+  from: senderWallet.publicKey,
+  to: receiverWallet.address,
+  amount: 100,
+  assetId: token
+})
+
+// Para validar pase de datos
+tx.ready
+
+// Puede mostrar su transacción sin procesar
+tx.transaction
+
+// Necesita firmar su transacción antes de enviar
+tx.sign(senderWallet.privateKey)
+
+// Puede mostrar su transacción sin procesar de signo
+tx.transaction
+
+// Ahora puedes enviar tu transacción de transferencia
+tx.send()
+
+// Para ver la respuesta de la transacción, use
+tx.history
+```
+
+<details>
+  <summary>respuesta exitosa</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": true,
+  "response": {
+    "type": 4,
+    "id": "DFh451K5ot7J8sjobVsrMcAQiFnRESXG6C19UnKsS5Mi",
+    "sender": "37bpECMv85nUr14YEfkyyyWKN2gYgrCfDhX",
+    "senderPublicKey": "FYvp88jP2xC21JCQfeSxUkg6qmLSGs5x8TBr5V3pT2NH",
+    "fee": 100000,
+    "timestamp": 1631473695599,
+    "signature": "2VwHiMtN2CUqJuMiaGqhsM1Qorhz7jMbjGb5wxN9Hb7WnLZXAwPPTEYjht8Ey8FjDt8739EFnuSvwMiwioqJ3XXd",
+    "recipient": "37hqrPGmzzT6xk5GFXbc9u5yYnRmBWSJuTY",
+    "assetId": null,
+    "amount": 100,
+    "feeAsset": null
+  }
+}
+```
+
+</details>
+
+<details>
+  <summary>respuesta de falla</summary>
+
+```json
+{
+  "ready": true,
+  "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+  "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+  "timestamp": 1631473467403,
+  "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+  "feeAsset": "",
+  "assetId": "",
+  "amount": 100,
+  "type": 4,
+  "fee": 100000,
+  "send": false,
+  "response": {
+    "error": 112,
+    "message": "State check failed. Reason: Attempt to transfer unavailable funds: Transaction application leads to negative lunes balance to (at least) temporary negative state, current balance equals 0, spends equals -100100, result is -100100",
+    "tx": {
+      "type": 4,
+      "id": "EzQVTZGavd9jmWprnADWMK3dya8ZeF1dAF4JNYmAkkH1",
+      "sender": "37QqvghNGWrUWSjALayGjCnT1nC28wXV6pL",
+      "senderPublicKey": "4SpyrKC8KFq2AF2RjgS6o373vTFrAAwrFmMfYL8PfezE",
+      "fee": 100000,
+      "timestamp": 1631473467403,
+      "signature": "4jD1B37yewcwedSZ6gt8LeVPY8f2i4tn8VjrnhNukCkpTrvm1e5YtrH7Byzj7rYTbB9dMzKzdL5P1E7xR7N89zp9",
+      "recipient": "37ani1re8pMVYRkHo1xDPtj8kBYyDu3DGkP",
+      "assetId": null,
+      "amount": 100,
+      "feeAsset": null
+    }
+  }
+}
+```
+
+</details>
+  </TabItem>
+
+</Tabs>

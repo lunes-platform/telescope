@@ -1,0 +1,365 @@
+---
+sidebar_position: 2
+description: Cómo crear una wallet con Lunes SDK
+keywords: [wallet, blockchain, lunes, sdk, transacciones de lunes sdk, lunes sdk, generar wallet,
+generar transacción en lunes, lunes transacciones, lunes wallet,  creación de lunes wallet]
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# 🔐 Wallet
+
+Una **Wallet** es un conjunto de una o más **Cuentas**, como una cuenta de correo electrónico, que en vez de tener _address@provider_ and _password_ has:
+
+- seed: lista de palabras aleatorias utilizadas para generar claves y direcciones
+- chain: bifurcación blockchain, puede ser mainnet o testnet
+- nonce: número utilizado para generar nuevas claves con la misma semilla
+- private key: clave utilizada para firmar transacciones
+- public key: clave derivada de la clave privada utilizada para derivar la dirección
+- address: dirección pública utilizada para recibir activos
+
+La cuenta se puede generar para testnet o mainnet. **Esto solo cambiará el address**,
+La seed utilizada para crear una cuenta debe ser una lista de 12 o más palabras,
+es posible generar una semilla con hasta 2048 palabras.
+La probabilidad de que se creen dos cuentas iguales es $\frac 1 {2048^n}$ donde $n$ es el número de palabras.
+Puede generar una cuenta pasando su seed, private_key, publick_key y address como **parámetros** o nada para generar una nueva.
+Cambiando el nonce es posible generar 4 294 967 295 cuentas diferentes con una sola seed.
+
+## Crear una _nueva_ Wallet
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```py
+from lunespy.client.wallet import Account
+
+wallet = Account()
+
+print(wallet)
+```
+
+```
+seed
+  └── phone dove naive find erase grant right cause garden struggle robust ball
+hash_seed
+  └── 8KkNgKuZBrYxYVCX1i1Cr8z3jX8xrtVvA8nJzfvS9ScSm2iLGLFjS1hatmu8JqHWWXY4qN5r9ukuUe45aDT9QAkCPWmFonjUiHW3
+nonce
+  └── 0
+chain
+  └── mainnet
+private_key
+  └── 4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL
+public_key
+  └── 6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8
+address
+  └── 37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL
+```
+
+  </TabItem>
+  <TabItem value="JavaScript" label="JavaScript">
+
+```js
+const lunescrab = require("lunescrab");
+
+const wallet = new lunescrab.Account({});
+
+console.log(wallet);
+```
+
+```js
+{
+  seed: 'phone dove naive find erase grant right cause garden struggle robust ball',
+  hash_seed: '8KkNgKuZBrYxYVCX1i1Cr8z3jX8xrtVvA8nJzfvS9ScSm2iLGLFjS1hatmu8JqHWWXY4qN5r9ukuUe45aDT9QAkCPWmFonjUiHW3',
+  nonce: 0,
+  chain: 'mainnet',
+  private_key: '4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL',
+  public_key: '6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8',
+  address: '37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL'
+}
+```
+
+</TabItem>
+
+  <TabItem value="Rust" label="Rust">
+
+```
+Dentro de poco tiempo
+```
+
+  </TabItem>
+</Tabs>
+
+## Crear el Wallet de _seed_, _nonce_ and _chain_
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```py
+from lunespy.client.wallet import Account
+
+wallet = Account(
+    seed = "phone dove naive find erase grant right cause garden struggle robust ball",
+    nonce = 0,
+    chain = "mainnet"
+)
+
+print(wallet)
+```
+
+```
+seed
+  └── phone dove naive find erase grant right cause garden struggle robust ball
+hash_seed
+  └── 8KkNgKuZBrYxYVCX1i1Cr8z3jX8xrtVvA8nJzfvS9ScSm2iLGLFjS1hatmu8JqHWWXY4qN5r9ukuUe45aDT9QAkCPWmFonjUiHW3
+nonce
+  └── 0
+chain
+  └── mainnet
+private_key
+  └── 4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL
+public_key
+  └── 6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8
+address
+  └── 37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL
+```
+
+  </TabItem>
+  <TabItem value="JavaScript" label="JavaScript">
+
+```js
+const lunescrab = require("lunescrab");
+
+const wallet = new lunescrab.Account({
+  seed: "phone dove naive find erase grant right cause garden struggle robust ball",
+});
+
+console.log(wallet);
+```
+
+```js
+{
+  seed: 'phone dove naive find erase grant right cause garden struggle robust ball',
+  hash_seed: '8KkNgKuZBrYxYVCX1i1Cr8z3jX8xrtVvA8nJzfvS9ScSm2iLGLFjS1hatmu8JqHWWXY4qN5r9ukuUe45aDT9QAkCPWmFonjUiHW3',
+  nonce: 0,
+  chain: 'mainnet',
+  private_key: '4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL',
+  public_key: '6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8',
+  address: '37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL'
+}
+```
+
+</TabItem>
+
+  <TabItem value="Rust" label="Rust">
+
+```
+Dentro de poco tiempo
+```
+
+  </TabItem>
+</Tabs>
+
+## Crear la Wallet de _private key_
+
+<Tabs>
+  <TabItem value="Python3" label="Python3">
+
+```py
+from lunespy.client.wallet import Account
+
+wallet = Account(
+    private_key="4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL"
+)
+
+print(wallet)
+```
+
+```
+seed
+ └──
+hash_seed
+ └──
+nonce
+ └──
+chain
+ └── mainnet
+private_key
+ └── 4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL
+public_key
+ └── 6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8
+address
+ └── 37VBg3J5PHti1QP1mishpXnkmQkasmcDKNh
+
+```
+
+</TabItem>
+  <TabItem value="JavaScript" label="JavaScript">
+
+```js
+const lunescrab = require("lunescrab");
+
+const wallet = new lunescrab.Account({
+  privateKey: "4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL",
+});
+
+console.log(wallet);
+```
+
+```js
+{
+  seed: '',
+  hash_seed: '',
+  nonce: '',
+  chain: 'mainnet',
+  private_key: '4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL',
+  public_key: '6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8',
+  address: '37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL'
+}
+```
+
+  </TabItem>
+  <TabItem value="Rust" label="Rust">
+
+```
+Dentro de poco tiempo
+```
+
+  </TabItem>
+</Tabs>
+
+## Crear la Wallet de _public key_
+
+<Tabs>
+  <TabItem value="Python3" label="Python3">
+
+```py
+from lunespy.client.wallet import Account
+
+wallet = Account(
+    public_key="6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8"
+)
+
+print(wallet)
+```
+
+```
+seed
+ └──
+hash_seed
+ └──
+nonce
+ └──
+chain
+ └── mainnet
+private_key
+ └──
+public_key
+ └── 6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8
+address
+ └── 37VBg3J5PHti1QP1mishpXnkmQkasmcDKNh
+
+```
+
+  </TabItem>
+  <TabItem value="JavaScript" label="JavaScript">
+
+```js
+const lunescrab = require("lunescrab");
+
+const wallet = new lunescrab.Account({
+  publicKey: "4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL",
+});
+
+console.log(wallet);
+```
+
+```js
+{
+  seed: ''
+  hash_seed: '',
+  nonce: '',
+  chain: 'mainnet',
+  private_key: '',
+  public_key: '6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8',
+  address: '37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL'
+}
+```
+
+  </TabItem>
+  <TabItem value="Rust" label="Rust">
+
+```
+Dentro de poco tiempo
+```
+
+  </TabItem>
+</Tabs>
+
+## Crear la Wallet de _address_
+
+<Tabs>
+  <TabItem value="Python3" label="Python3">
+
+```py
+from lunespy.client.wallet import Account
+
+wallet = Account(
+    address="37VBg3J5PHti1QP1mishpXnkmQkasmcDKNh"
+)
+
+print(wallet)
+```
+
+```
+seed
+ └──
+hash_seed
+ └──
+nonce
+ └──
+chain
+ └── mainnet
+private_key
+ └──
+public_key
+ └──
+address
+ └── 37VBg3J5PHti1QP1mishpXnkmQkasmcDKNh
+
+```
+
+  </TabItem>
+  <TabItem value="JavaScript" label="JavaScript">
+
+```js
+const lunescrab = require("lunescrab");
+
+const wallet = new lunescrab.Account({
+  address: "37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL",
+});
+
+console.log(wallet);
+```
+
+```js
+{
+  seed: '',
+  hash_seed: '',
+  nonce: '',
+  chain: 'mainnet',
+  private_key: '',
+  public_key: '',
+  address: '37tXH2QNg15AtDp9rkJ391v2Z3FqpPwLybL'
+}
+```
+
+  </TabItem>
+  <TabItem value="Rust" label="Rust">
+
+```
+Dentro de poco tiempo
+```
+
+  </TabItem>
+</Tabs>

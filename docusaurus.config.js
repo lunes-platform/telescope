@@ -108,7 +108,7 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'pt'],
+    locales: ['en', 'pt', 'fr', 'es'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -120,6 +120,16 @@ module.exports = {
         direction: 'ltr',
         htmlLang: 'pt-BR',
       },
+      fr: {
+        label: 'Français',
+        direction: 'ltr',
+        htmlLang: 'fr-FR',
+      },
+      es: {
+        label: 'Español',
+        direction: 'ltr',
+        htmlLang: 'es-ES'
+      }
     },
   },
 };
