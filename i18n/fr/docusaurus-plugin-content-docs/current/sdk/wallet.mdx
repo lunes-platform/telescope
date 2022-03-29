@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-description: Comment créer un portefeuille avec Lunes SDK
+description:  Comment créer un portefeuille avec Lunes SDK
 keywords: [wallet, blockchain, lunes, sdk, transactions of lunes sdk, lunes sdk, generate wallet,
 generate transaction in lunes, lunes transactions, lunes wallet, lunes creation wallet]
 ---
@@ -14,17 +14,17 @@ Un **Wallet** est un ensemble d'un ou plusieurs **Comptes**, comme un compte de 
 
 - seed: liste de mots aléatoires utilisés pour générer des clés et des adresses
 - chain: fork blockchain, peut être mainnet ou testnet
-- nonce: nombre utilisé pour générer de nouvelles clés avec la même graine
+- nonce: nombre utilisé pour générer de nouvelles clés avec la même seed
 - private key: clé utilisée pour signer les transactions
 - public key: clé dérivée de la clé privée utilisée pour dériver l'adresse
 - address: adresse publique utilisée pour recevoir les actifs
 
 Le compte peut être généré pour testnet ou mainnet. **Cela ne changera que l'adresse**,
-La graine utilisée pour créer un compte doit être une liste de 12 mots ou plus,
-il est possible de générer une graine avec jusqu'à 2048 mots.
+La seed utilisé pour créer un compte doit être une liste de 12 mots ou plus,
+il est possible de générer une seed avec jusqu'à 2048 mots.
 La probabilité que deux comptes égaux soient créés est de $\frac 1 {2048^n}$ où $n$ est le nombre de mots.
 Vous pouvez générer un compte en passant votre seed, private_key, public_key et adresse comme **paramètres** ou rien pour en générer un nouveau.
-Changer le nonce est possible générer 4 294 967 295 comptes différents avec une seule graine.
+Changer le nonce est possible générer 4 294 967 295 comptes différents avec une seule seed.
 
 ## Créer un _nouveau_ portefeuille
 
