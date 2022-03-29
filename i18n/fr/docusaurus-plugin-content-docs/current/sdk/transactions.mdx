@@ -1,8 +1,8 @@
 ---
 sidebar_position: 3
 description: Comment effectuer des transactions avec Lunes SDK
-keywords: [transactions, blockchain, lunes, sdk, transactions of lunes sdk, lunes sdk, generate wallet,
-generate transaction in lunes, lunes transactions, lunes wallet transactions]
+keywords: [transactions, blockchain, lunes, sdk, transactions avec le sdk de Lunes, lunes sdk, générer un portefeuille,
+générer une transaction dans lunes, transactions de lunes, transactions avec le portefeuille de Lunes]
 ---
 
 import Tabs from "@theme/Tabs";
@@ -29,14 +29,14 @@ sender_wallet = Account(
 )
 receiver_wallet = Account()
 
-# Configurez la transaction pour transférer vos jetons
+# Configurez la transaction pour transférer vos Tokens
 tx = TransferToken(
   sender=sender_wallet.public_key,
   receiver=receiver_wallet.address,
   amount=100
 )
 
-# Pour valider le passage de données
+# Pour la validation de data pass
 tx.ready
 
 # Vous pouvez montrer votre transaction brute
@@ -48,10 +48,10 @@ tx.sign(sender_wallet.private_key)
 # Vous pouvez montrer votre signature transaction brute
 tx.transaction
 
-# Vous pouvez maintenant envoyer votre transaction de transfert
+# Vous pouvez maintenant faire votre transfert
 tx.send()
 
-# Pour voir la réponse de la transaction, utilisez
+# Pour voir la réponse de la transaction
 tx.history
 ```
 
@@ -142,14 +142,14 @@ const senderWallet = Account({
 })
 const receiverWallet = Account({})
 
-// Configurez la transaction pour transférer vos jetons
+// Configurez la transaction pour transférer vos Tokens
 var tx = TransferToken({
   from: senderWallet.publicKey,
   to: receiverWallet.address,
   amount: 100
 })
 
-// Pour valider le passage de données
+// Pour la validation de data pass
 tx.ready
 
 // Vous pouvez montrer votre transaction brute
@@ -161,10 +161,10 @@ tx.sign(senderWallet.privateKey)
 // Vous pouvez montrer votre signature transaction brute
 tx.transaction
 
-// Vous pouvez maintenant envoyer votre transaction de transfert
+// Vous pouvez maintenant faire votre transfert
 tx.send()
 
-// Pour voir la réponse de la transaction, utilisez
+// Pour voir la réponse de la transaction
 tx.history
 ```
 
@@ -266,7 +266,7 @@ receiver_wallet = Account()
 token = "9ax6usn3TmwdTRoTnn8zr5Kku9qykstYxRkUb4Z1Z2oY"
 
 
-# Configurez la transaction pour transférer vos jetons
+# Configurez la transaction pour transférer vos Tokens
 tx = TransferToken(
   sender=sender_wallet.public_key,
   receiver=receiver_wallet.address,
@@ -274,7 +274,7 @@ tx = TransferToken(
   asset_id=token
 )
 
-# Pour valider le passage de données
+# Pour la validation de data pass
 tx.ready
 
 # Vous pouvez montrer votre transaction brute
@@ -286,10 +286,10 @@ tx.sign(sender_wallet.private_key)
 # Vous pouvez montrer votre signature transaction brute
 tx.transaction
 
-# Vous pouvez maintenant envoyer votre transaction de transfert
+# Vous pouvez maintenant faire votre transfert
 tx.send()
 
-# Pour voir la réponse de la transaction, utilisez
+# Pour voir la réponse de la transaction
 tx.history
 ```
 
@@ -384,7 +384,7 @@ const senderWallet = Account({
 })
 const receiverWallet = Account({})
 
-// Configurez la transaction pour transférer vos jetons
+// Configurez la transaction pour transférer vos Tokens
 var tx = TransferToken({
   from: senderWallet.publicKey,
   to: receiverWallet.address,
@@ -392,7 +392,7 @@ var tx = TransferToken({
   assetId: token
 })
 
-// Pour valider le passage de données
+// Pour la validation de data pass
 tx.ready
 
 // Vous pouvez montrer votre transaction brute
@@ -404,10 +404,10 @@ tx.sign(senderWallet.privateKey)
 // Vous pouvez montrer votre signature transaction brute
 tx.transaction
 
-// Vous pouvez maintenant envoyer votre transaction de transfert
+// Vous pouvez maintenant faire votre transfert
 tx.send()
 
-// Pour voir la réponse de la transaction, utilisez
+// Pour voir la réponse de la transaction
 tx.history
 ```
 

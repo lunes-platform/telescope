@@ -9,8 +9,8 @@ module.exports = {
   tagline: 'The Future in the Present!',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/telescope/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.svg',
   organizationName: 'lunes-platform',
   projectName: 'telescope',
@@ -35,8 +35,8 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'releases',
           label: 'Documentation',
+          docId: 'about/intro',
           position: 'left',
         },
         {
