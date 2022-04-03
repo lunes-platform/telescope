@@ -7,7 +7,7 @@ const katex = require('rehype-katex');
 module.exports = {
   title: '🔭 Telescope',
   tagline: 'The Future in the Present!',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://lunes-platform.github.io/telescope/',
   baseUrl: '/telescope/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
