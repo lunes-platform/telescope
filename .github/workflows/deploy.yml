@@ -8,7 +8,7 @@ on:
       - main
     paths:
       - '.github/workflows/deploy.yml'
-      - 'website/**'
+      - './**'
   pull_request:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     defaults:
       run:
-        working-directory: website
+        working-directory: .
     steps:
       - uses: actions/checkout@v3
 
@@ -35,9 +35,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-website-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-website-
+            ${{ runner.os }}-
 
       - run: yarn install --frozen-lockfile
       - run: yarn build
@@ -47,4 +47,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/build
+          publish_dir: ./build
