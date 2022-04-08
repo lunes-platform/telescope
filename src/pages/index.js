@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import Translate, {translate} from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -17,8 +17,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/releases">
-            <Translate>Explore the Lunes Universe ✨</Translate>
+            to="/docs/get_started/overview">
+            <Translate>Get Started</Translate>
           </Link>
         </div>
       </div>

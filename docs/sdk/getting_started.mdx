@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 
 # 🏁 Getting Started
 
-## Intro
+## 🗺 Intro
 
 The **Lunes SDK** brings developers closer to the Lunes Blockchain,
 providing a range of functionality for decentralized applications (DApps) and blockchain integrations.
@@ -17,23 +17,31 @@ This helps developers to manage their wallets and make transactions simply and s
 
 The library is driven-transactions on the _lunesnode_ architecture.
 **The transaction concept here will be any type of interaction with the lunes blockchain.**
-In this way, we can create a transaction to transfer tokens, a transaction to create tokens, a transaction to create a nickname (alias) for our account, etc.
+In this way, we can create a transaction to transfer tokens, a transaction to create tokens,
+a transaction to create a nickname (alias) for our address, etc.
 
-## How to install
+## 🏗 Architecture
 
-<Tabs>
-  <TabItem value="Python3" label="Python3" default>
+### 🔑 Wallet
 
-```
-pip install lunespy
-```
+**Web 2.0**
+![image](/sdk/userweb2.png)
 
-  </TabItem>
-  <TabItem value="JavaScript" label="JavaScript" default>
+**Lunes Protocol**
+![image](/sdk/userlunes.png)
 
-```
-npm i lunescrab
-```
+### 🛰 Full Node
 
-  </TabItem>
-</Tabs>
+**Web 2.0**
+![image](/sdk/serverweb2.png)
+
+**Lunes Protocol**
+![image](/sdk/serverlunes.png)
+
+### 🔗 Blockchain
+
+**Web 2.0**
+![image](/sdk/databaseweb2.png)
+
+**Lunes Protocol**
+![image](/sdk/databaselunes.png)

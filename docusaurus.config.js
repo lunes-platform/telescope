@@ -5,15 +5,16 @@ const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: '🔭 Telescope',
+  url: 'https://lunes-platform.github.io/',
   tagline: 'The Future in the Present!',
-  url: 'https://lunes-platform.github.io/telescope/',
-  baseUrl: '/telescope/',
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
-  favicon: 'img/favicon.svg',
   organizationName: 'lunes-platform',
+  onBrokenMarkdownLinks: 'ignore',
+  staticDirectories: ['static'],
+  favicon: 'img/favicon.svg',
   projectName: 'telescope',
+  onBrokenLinks: 'ignore',
+  title: '🔭 Telescope',
+  baseUrl: '/',
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
@@ -35,12 +36,24 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Documentation',
-          docId: 'about/intro',
+          label: '🔑 Create Wallet',
+          docId: 'sdk/wallet/create',
           position: 'left',
         },
         {
-          label: 'Lunes Blockchain',
+          type: 'doc',
+          label: '👾 Create NFT',
+          docId: 'sdk/transactions/issueNFT',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          label: '🎉 New Releases',
+          docId: 'get_started/releases',
+          position: 'left',
+        },
+        {
+          label: 'Explore Blocks',
           href: 'https://blockexplorer.lunes.io',
           position: 'right'
         },

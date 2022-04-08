@@ -1,0 +1,28 @@
+---
+sidebar_position: 1
+description: How to create a wallet with Lunes SDK
+keywords: [wallet, blockchain, lunes, sdk, transactions of lunes sdk, lunes sdk, generate wallet,
+generate transaction in lunes, lunes transactions, lunes wallet, lunes creation wallet]
+---
+
+# 🔐 Cryptography
+
+## A **Wallet** like is an e-mail account, which instead of having _address@provider_ and _password_ has:
+
+- seed: list of random words used to generate keys and address
+- chain: blockchain fork, can be mainnet or testnet
+- nonce: number used to generate new keys with the same seed
+- private key: key used to sign transactions
+- public key: key derived from the private key used to derive the address
+- address: public address used to receive assets
+
+## The wallet can be generated for testnet or mainnet. **This will only change the address**.
+
+## The seed used to create an wallet must be a list of 12 or more words, it is possible to generate a seed with up to 2048 words.
+
+## The chance of two equal wallets to be created is $\frac 1 {2048^n}$ where $n$ is the number of words.
+
+## You can generate a wallet passing your `seed`, `private key`, `public key` and `address` as **parameters** or nothing to generate a new one.
+
+## Changing the nonce is possible generate 4 294 967 295 different wallets with only one seed.
+
