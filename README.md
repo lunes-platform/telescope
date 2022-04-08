@@ -8,12 +8,9 @@
 
 Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials, everything you want in one place!
 
-
 [![GitHub Pages](https://github.com/lunes-platform/telescope/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/lunes-platform/telescope/actions/workflows/deploy.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/lunes-platform)
-
-
 
   <a href="https://twitter.com/LunesPlatform" target="_blank">
     <img alt="Twitter: Lunes Platform" src="https://badgen.net/twitter/follow/lunesplatform?icon=twitter&label=follow @LunesPlatform&color=blue" />
@@ -24,9 +21,7 @@ Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials
 
 </div>
 
-## Changelog
-
-The changelog process for this project is described [here](CHANGELOG.md).
+w
 
 ## Documentation
 
@@ -38,11 +33,9 @@ The Telescope documentations is hosted at [ Telescope ](https://blockchain.lunes
 
 Thanks to the following people who have contributed to this project:
 
-* [@olivmath](https://git.lunes.io/olivmath)
-* [@xonfps](https://git.lunes.io/xonfps)
-* [@nunes](https://git.lunes.io/nunes)
-* [@joelEsteves](https://git.lunes.io/joelEsteves)
-
+- [@olivmath](https://git.lunes.io/olivmath)
+- [@xonfps](https://git.lunes.io/xonfps)
+- [@nunes](https://git.lunes.io/nunes)
 
 ## Contact
 
