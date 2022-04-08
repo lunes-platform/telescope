@@ -1,4 +1,4 @@
-# Bug Issue *Error Name*
+# Bug Issue _Error Name_
 
 ## Expected behavior
 

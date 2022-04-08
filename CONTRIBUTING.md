@@ -1,6 +1,5 @@
 # CONTRIBUTING
 
-
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. Thanks again!
@@ -21,4 +20,3 @@ If you have a suggestion that would make this better, please fork the repo and c
 - test: (adding missing tests, refactoring tests; no production code change)
 - chore: (updating grunt tasks etc; no production code change)
 - perf: A code change that improves performance
-
