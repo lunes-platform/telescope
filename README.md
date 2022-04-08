@@ -21,7 +21,7 @@ Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials
 
 </div>
 
-w
+
 
 ## Documentation
 
