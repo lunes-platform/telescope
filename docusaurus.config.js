@@ -14,7 +14,7 @@ module.exports = {
   projectName: 'telescope',
   onBrokenLinks: 'ignore',
   title: '🔭 Telescope',
-  baseUrl: '/',
+  baseUrl: '/telescope/',
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
