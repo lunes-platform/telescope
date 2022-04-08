@@ -9,7 +9,7 @@
 Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials, everything you want in one place!
 
 
-[![pipeline status](https://git.lunes.io/blockchain/telescope/badges/main/pipeline.svg)](https://git.lunes.io/blockchain/telescope/-/commits/main)
+[![GitHub Pages](https://github.com/lunes-platform/telescope/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/lunes-platform/telescope/actions/workflows/deploy.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/lunes-platform)
 
