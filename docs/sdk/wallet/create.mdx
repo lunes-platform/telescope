@@ -109,11 +109,16 @@ import TabItem from "@theme/TabItem";
   from lunespy.wallet import wallet_factory
 
   wallet = wallet_factory(
-      seed="abc", # you can create a seed with any string
-      private_key="", # only if it doesn't pass the seed
-      chain=1, # 1 for mainnet, 0 fo testnet
-      nonce=0, # 0 by default, but can go up to 
-      seed_len=15, # number of words of the seed, only when creating a new seed
+      # you can create a seed with any string
+      seed="abc",
+      # only if it doesn't pass the seed
+      private_key="",
+      # 1 for mainnet, 0 fo testnet
+      chain=1,
+      # 0 by default, but can go up to 
+      nonce=0,
+      # number of words of the seed, only when creating a new seed
+      seed_len=15,
   )
   ```
 
