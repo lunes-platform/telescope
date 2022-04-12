@@ -7,7 +7,9 @@ generate transaction in lunes, lunes transactions, lunes wallet, lunes creation 
 
 # 🔐 Cryptography
 
-## A **Wallet** like is an e-mail account, which instead of having _address@provider_ and _password_ has:
+## Wallet
+
+A **Wallet** like is an e-mail account, which instead of having _address@provider_ and _password_ has:
 
 - seed: list of random words used to generate keys and address
 - chain: blockchain fork, can be mainnet or testnet
@@ -16,13 +18,98 @@ generate transaction in lunes, lunes transactions, lunes wallet, lunes creation 
 - public key: key derived from the private key used to derive the address
 - address: public address used to receive assets
 
-## The wallet can be generated for testnet or mainnet. **This will only change the address**.
 
-## The seed used to create an wallet must be a list of 12 or more words, it is possible to generate a seed with up to 2048 words.
+The wallet can be generated for testnet or mainnet, **this will only change the address**.
+The seed used to create a wallet must be a list of 12 or more words out of a list of 2048 words, **[see word list](https://github.com/lunes-platform/lunespy/blob/468cca1cca87b1942e537c82889cd118dc66c9df/lunespy/wallet/constants.py#L8)**.
+The chance of two equal wallets to be created is $\frac 1 {2048^n}$ where $n$ is the number of words.
+You can generate a wallet by passing your `seed` or `private key` as parameters or **nothing to generate a new one**.
+By changing the nonce it is possible to generate **4,294,967,295** different wallets with the same seed.
 
-## The chance of two equal wallets to be created is $\frac 1 {2048^n}$ where $n$ is the number of words.
 
-## You can generate a wallet passing your `seed`, `private key`, `public key` and `address` as **parameters** or nothing to generate a new one.
+## How to implement the Lunes Wallet
 
-## Changing the nonce is possible generate 4 294 967 295 different wallets with only one seed.
+### Hidden your seed
 
+1. **Choose a Nonce and a Seed**
+```python
+nonce = 0
+seed = "scrub guard swim catch range upon dawn ensure segment alpha sentence spend effort bar benefit"
+```
+2. **Turn them into 8-bit unsigned integer array**
+```python
+raw_seed = [0, 0, 0, 0, 115, 99, 114, 117, 98, 32, 103, 117, 97, 114, 100, 32, 115, 119, 105, 109, 32, 99, 97, 116, 99, 104, 32, 114, 97, 110, 103, 101, 32, 117, 112, 111, 110, 32, 100, 97, 119, 110, 32, 101, 110, 115, 117, 114, 101, 32, 115, 101, 103, 109, 101, 110, 116, 32, 97, 108, 112, 104, 97, 32, 115, 101, 110, 116, 101, 110, 99, 101, 32, 115, 112, 101, 110, 100, 32, 101, 102, 102, 111, 114, 116, 32, 98, 97, 114, 32, 98, 101, 110, 101, 102, 105, 116]
+```
+
+3. **Now hide your `raw_seed` by going through the hash functions blake2b-32bit then keccak-256 then sha-256, `Exactly in the same order`**
+
+```python
+# blake2b 32 bit
+blake_seed = [239, 70, 82, 78, 207, 254, 146, 210, 43, 85, 189, 190, 198, 123, 21, 16, 117, 203, 246, 228, 89, 37, 13, 204, 204, 153, 20, 75, 129, 221, 74, 191]
+
+# keccak 256
+keccak_seed = [204, 135, 46, 34, 69, 158, 92, 34, 3, 35, 101, 30, 7, 9, 122, 48, 37, 33, 98, 7, 95, 161, 1, 82, 225, 222, 15, 155, 156, 140, 53, 138]
+
+# sha 256
+sha256_seed = [163, 66, 17, 225, 21, 144, 128, 203, 241, 21, 205, 209, 16, 138, 219, 155, 50, 48, 24, 209, 227, 79, 35, 104, 252, 102, 213, 74, 63, 165, 20, 96]
+```
+
+4. **Get you Hidded Seed**
+```python
+hidded_seed = [163, 66, 17, 225, 21, 144, 128, 203, 241, 21, 205, 209, 16, 138, 219, 155, 50, 48, 24, 209, 227, 79, 35, 104, 252, 102, 213, 74, 63, 165, 20, 96]
+```
+
+![seed](/sdk/wallet/cryptography/seed.png)
+
+
+### Generate your Keys
+5. **Use you `hidded_seed` to generate a private and public key using `ed25519-axolotl`**
+
+```python
+# ed25519-axolotl
+private_key = [160, 66, 17, 225, 21, 144, 128, 203, 241, 21, 205, 209, 16, 138, 219, 155, 50, 48, 24, 209, 227, 79, 35, 104, 252, 102, 213, 74, 63, 165, 20, 96]
+public_key = [28, 105, 36, 199, 36, 111, 120, 95, 152, 208, 215, 39, 161, 71, 78, 237, 200, 160, 71, 209, 177, 102, 140, 170, 56, 206, 9, 214, 227, 38, 117, 117]
+```
+![key_pair](/sdk/wallet/cryptography/keys.png)
+
+### Assembly your Address
+
+6. **Hash you `public_key` using blake2b 32bit then keccak 256 then get the 20 first elements**
+
+```python
+# blake2b_32bit -> keccak_256 -> result[0..20]
+hash_public_key = [44, 46, 82, 88, 220, 91, 204, 187, 92, 83, 89, 68, 39, 15, 115, 185, 143, 151, 57, 38, 43, 76, 101, 201, 43, 63, 17, 65, 16, 3, 71, 121]
+```
+
+7. **Join the `version` + `chain` + `hash_public_key`**
+
+```python
+# version of address
+version = 1
+# 49 for mainnet, 48 for testnet [*]
+chain = 49
+# version + chain + addr
+addr = [1, 49, 44, 46, 82, 88, 220, 91, 204, 187, 92, 83, 89, 68, 39, 15, 115, 185, 143, 151, 57, 38, 43, 76, 101, 201, 43, 63, 17, 65, 16, 3, 71, 121]
+```
+
+8. **Hash the `addr` using blake2b 32bit then keccak 256 then get the 4 first elements**
+
+```python
+# blake2b_32bit -> keccak_256 -> result[0..4]
+checksum = [99, 41, 200, 192]
+```
+
+9. **Join `address` + `checksum`**
+
+```python
+# addr + checksum
+address = [1, 49, 44, 46, 82, 88, 220, 91, 204, 187, 92, 83, 89, 68, 39, 15, 115, 185, 143, 151, 57, 38, 99, 41, 200, 192]
+```
+
+10. **Finally encode your human readable address using BASE58**
+
+```python
+# base58 encode
+address = "37o7aY3eZZTXmzrDa5e4Wj3Z4ZZuyV42Aaj"
+```
+
+![address](/sdk/wallet/cryptography/address.png)
