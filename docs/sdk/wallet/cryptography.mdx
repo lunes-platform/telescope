@@ -7,7 +7,9 @@ generate transaction in lunes, lunes transactions, lunes wallet, lunes creation 
 
 # 🔐 Cryptography
 
-## A **Wallet** like is an e-mail account, which instead of having _address@provider_ and _password_ has:
+## Wallet
+
+A **Wallet** like is an e-mail account, which instead of having _address@provider_ and _password_ has:
 
 - seed: list of random words used to generate keys and address
 - chain: blockchain fork, can be mainnet or testnet
@@ -16,13 +18,13 @@ generate transaction in lunes, lunes transactions, lunes wallet, lunes creation 
 - public key: key derived from the private key used to derive the address
 - address: public address used to receive assets
 
-## The wallet can be generated for testnet or mainnet. **This will only change the address**.
 
-## The seed used to create an wallet must be a list of 12 or more words, it is possible to generate a seed with up to 2048 words.
+The wallet can be generated for testnet or mainnet, **this will only change the address**.
+The seed used to create a wallet must be a list of 12 or more words out of a list of 2048 words, **[see word list](https://github.com/lunes-platform/lunespy/blob/468cca1cca87b1942e537c82889cd118dc66c9df/lunespy/wallet/constants.py#L8)**.
+The chance of two equal wallets to be created is $\frac 1 {2048^n}$ where $n$ is the number of words.
+You can generate a wallet by passing your `seed` or `private key` as parameters or **nothing to generate a new one**.
+By changing the nonce it is possible to generate **4,294,967,295** different wallets with the same seed.
 
-## The chance of two equal wallets to be created is $\frac 1 {2048^n}$ where $n$ is the number of words.
-
-## You can generate a wallet passing your `seed`, `private key`, `public key` and `address` as **parameters** or nothing to generate a new one.
-
-## Changing the nonce is possible generate 4 294 967 295 different wallets with only one seed.
-
+![seed](/sdk/wallet/cryptography/seed.png)
+![key_pair](/sdk/wallet/cryptography/key_pair.png)
+![address](/sdk/wallet/cryptography/address.png)
