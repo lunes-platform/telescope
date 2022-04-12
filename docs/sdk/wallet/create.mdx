@@ -13,15 +13,15 @@ import TabItem from "@theme/TabItem";
 ## 🚨 [Read Before](/docs/sdk/wallet/cryptography) 🚨
 - **[Install SDK](/docs/sdk/install_sdk)**
 
-## _New_ Wallet
+## New Wallet
 
 <Tabs>
   <TabItem value="Python3" label="Python3" default>
 
   ```python
-  from lunespy.client.account import Wallet
+  from lunespy.wallet import wallet_factory
 
-  wallet = Wallet()
+  wallet = wallet_factory()
   ```
 
   </TabItem>
@@ -47,12 +47,10 @@ import TabItem from "@theme/TabItem";
   <TabItem value="Python3" label="Python3" default>
 
   ```python
-  from lunespy.client.account import Wallet
+  from lunespy.wallet import wallet_factory
 
-  wallet = Wallet(
-      seed = "phone dove naive find erase grant right cause garden struggle robust ball",
-      chain = "mainnet",
-      nonce = 0
+  wallet = wallet_factory(
+      seed = "phone dove naive find erase grant right cause garden struggle robust ball"
   )
   ```
   </TabItem>
@@ -78,9 +76,9 @@ import TabItem from "@theme/TabItem";
   <TabItem value="Python3" label="Python3">
 
   ```python
-  from lunespy.client.account import Wallet
+  from lunespy.wallet import wallet_factory
 
-  wallet = Wallet(
+  wallet = wallet_factory(
       private_key="4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL"
   )
   ```
@@ -102,46 +100,20 @@ import TabItem from "@theme/TabItem";
   </TabItem>
 </Tabs>
 
-## From _public key_
+## Full Example
 
 <Tabs>
   <TabItem value="Python3" label="Python3">
 
   ```python
-  from lunespy.client.account import Wallet
+  from lunespy.wallet import wallet_factory
 
-  wallet = Wallet(
-      public_key="6ABYrcXPHxrhiq1p7zcLV9EKxP24TPXr7e1LHimfqTz8"
-  )
-  ```
-
-  </TabItem>
-  <TabItem value="Node.js" label="Node.js">
-
-  ```javascript
-  Comming Soon
-  ```
-  </TabItem>
-
-  <TabItem value="Web.js" label="Web.js">
-
-  ```javascript
-  Comming Soon
-  ```
-
-  </TabItem>
-</Tabs>
-
-## From _address_
-
-<Tabs>
-  <TabItem value="Python3" label="Python3">
-
-  ```python
-  from lunespy.client.account import Wallet
-
-  wallet = Wallet(
-      address="37VBg3J5PHti1QP1mishpXnkmQkasmcDKNh"
+  wallet = wallet_factory(
+      seed = "abc", # you can create a seed with any string
+      private_key = "", # only if it doesn't pass the seed
+      chain = 1, # 1 for mainnet, 0 fo testnet
+      nonce = 0, # 0 by default, but can go up to 
+      seed_len = 15, # number of words of the seed, only when creating a new seed
   )
   ```
 
