@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 description: How to make transactions with Lunes SDK
 keywords: [transfer, blockchain, lunes, sdk, transfer of lunes sdk, lunes sdk, generate wallet,
 generate transaction in lunes, transfer lunes, lunes wallet transfer, transfer token]
@@ -8,30 +8,123 @@ generate transaction in lunes, transfer lunes, lunes wallet transfer, transfer t
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# 📩 Transfer Token
+# 📩 Transfer Tokens
+
 
 ## 🚨 [Read Before](/docs/sdk/transactions/tx) 🚨
 - **[Install SDK](/docs/sdk/install_sdk)**
 - **[Create Wallet](/docs/sdk/wallet/create)**
 
+## Create Transaction
 
 <Tabs>
   <TabItem value="Python3" label="Python3" default>
 
 ```python
-from lunespy.client.transactions.transfer import TransferToken
-from lunespy.client.account import Wallet
+from lunespy.tx.transfer import transfer_token_factory
+from lunespy.wallet import wallet_factory
 
-token = "YOUR_TOKEN_ID"
+sender = wallet_factory()
 
-tx = TransferToken(
-    sender=sender_wallet,
-    receiver=receiver_wallet,
-    token_id=token,
-    amount=10
+tx = transfer_token_factory(
+    sender=sender.public_key,
+    recipient="37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
+    amount=249.99,
+    assetId="" # id of the token that should be sent, default token is Lunes
 )
-tx.sign(sender_wallet.private_key)
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+
+  <TabItem value="Web.js" label="Web.js">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+## Sign Transaction
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python
+tx.sign(sender.private_key)
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+
+  <TabItem value="Web.js" label="Web.js">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+## Broadcast Transaction
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python
 tx.broadcast()
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+
+  <TabItem value="Web.js" label="Web.js">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+## Full Example
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python
+from lunespy.tx.transfer import transfer_token_factory
+from lunespy.wallet import wallet_factory
+
+sender = wallet_factory()
+
+tx = transfer_token_factory(
+    sender=sender.public_key, # public key of sender
+    recipient="37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z", # address that will receiver token
+    amount=249.99, # amount of token to send
+    assetId="", # id of the token that should be sent, default token is Lunes
+    fee=1000000 # if you want to send a higher fee, default is 1000000
+
+).sign(sender.private_key).broadcast(
+    node = "https://my-full-node.com" # url or ip:port of the node that will process the transaction,
+    # defaul is https://lunesnode-testnet.lunes.io
+)
 ```
 
   </TabItem>
