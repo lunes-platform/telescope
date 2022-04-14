@@ -1,4 +1,4 @@
-# 🔭 [Telescope is the docs](https://blockchain.lunes.io/telescope/)
+# 🔭 [Telescope is the docs](https://lunes-platform.github.io/telescope/)
 
 Telescope where is all information about lunes it is, SDK, Lunes Node, Tutorials, everything you (dev 💜) want in one place!
 
