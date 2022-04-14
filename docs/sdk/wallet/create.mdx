@@ -18,7 +18,7 @@ import TabItem from "@theme/TabItem";
 <Tabs>
   <TabItem value="Python3" label="Python3" default>
 
-  ```python
+  ```python {3}
   from lunespy.wallet import wallet_factory
 
   wallet = wallet_factory()
@@ -28,15 +28,17 @@ import TabItem from "@theme/TabItem";
 
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
+  ```javascript {3}
+  import lunesjs from "lunesjs"
+
+  const wallet = lunesjs.walletFactory()
   ```
   </TabItem>
 
-  <TabItem value="Web.js" label="Web.js">
+  <TabItem value="Web" label="Web">
 
   ```javascript
-  Comming Soon
+  👻
   ```
   </TabItem>
 </Tabs>
@@ -46,22 +48,26 @@ import TabItem from "@theme/TabItem";
 <Tabs>
   <TabItem value="Python3" label="Python3" default>
 
-  ```python
+  ```python {4}
   from lunespy.wallet import wallet_factory
 
   wallet = wallet_factory(
-      seed="phone dove naive find erase grant right cause garden struggle robust ball"
+      seed="scrub guard swim catch range upon dawn ensure segment alpha sentence spend effort bar benefit"
   )
   ```
   </TabItem>
   <TabItem value="Node.js" label="Node.js">
 
-  ```
-  Comming Soon
+  ```javascript {4}
+  import lunesjs from "lunesjs"
+
+  const wallet = lunesjs.walletFactory({
+    seed: "scrub guard swim catch range upon dawn ensure segment alpha sentence spend effort bar benefit"
+  })
   ```
   </TabItem>
 
-  <TabItem value="Web.js" label="Web.js">
+  <TabItem value="Web" label="Web">
 
   ```
   Comming Soon
@@ -75,23 +81,27 @@ import TabItem from "@theme/TabItem";
 <Tabs>
   <TabItem value="Python3" label="Python3">
 
-  ```python
+  ```python {4}
   from lunespy.wallet import wallet_factory
 
   wallet = wallet_factory(
-      private_key="4ErHkZRfViERqzDn23PaboWqwBJPUzYVZGFaGA3FvZNL"
+      private_key="BHqy61X4HMNoyJUcvkbZLomqeFqwq7QtYecWUe3hoazX"
   )
   ```
 
   </TabItem>
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
+  ```javascript {4}
+  import lunesjs from "lunesjs"
+
+  const wallet = lunesjs.walletFactory({
+    privateKey: "BHqy61X4HMNoyJUcvkbZLomqeFqwq7QtYecWUe3hoazX"
+  })
   ```
   </TabItem>
 
-  <TabItem value="Web.js" label="Web.js">
+  <TabItem value="Web" label="Web">
 
   ```javascript
   Comming Soon
@@ -105,14 +115,14 @@ import TabItem from "@theme/TabItem";
 <Tabs>
   <TabItem value="Python3" label="Python3">
 
-  ```python
+  ```python {5,7,9,11,13}
   from lunespy.wallet import wallet_factory
 
   wallet = wallet_factory(
       # you can create a seed with any string
-      seed="abc",
+      seed="scrub guard swim catch range upon dawn ensure segment alpha sentence spend effort bar benefit",
       # only if it doesn't pass the seed
-      private_key="",
+      private_key="BHqy61X4HMNoyJUcvkbZLomqeFqwq7QtYecWUe3hoazX",
       # 1 for mainnet, 0 fo testnet
       chain=1,
       # 0 by default, but can go up to 
@@ -125,12 +135,25 @@ import TabItem from "@theme/TabItem";
   </TabItem>
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
+  ```javascript {5,7,9,11,13}
+  import lunesjs from "lunesjs"
+
+  const wallet = wallet_factory({
+      // you can create a seed with any string
+      seed: "scrub guard swim catch range upon dawn ensure segment alpha sentence spend effort bar benefit",
+      // only if it doesn't pass the seed
+      private_key: "BHqy61X4HMNoyJUcvkbZLomqeFqwq7QtYecWUe3hoazX",
+      // 1 for mainnet, 0 fo testnet
+      chain: 1,
+      // 0 by default, but can go up to 
+      nonce: 0,
+      // number of words of the seed, only when creating a new seed
+      seed_len: 15,
+  })
   ```
   </TabItem>
 
-  <TabItem value="Web.js" label="Web.js">
+  <TabItem value="Web" label="Web">
 
   ```javascript
   Comming Soon
