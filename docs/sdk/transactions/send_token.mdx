@@ -37,9 +37,17 @@ tx = transfer_token_factory(
 
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
-  ```
+```javascript {6-8}
+import lunesjs from "lunesjs"
+
+const sender = lunesjs.walletFactory({})
+
+const tx = lunesjs.transferTokenFactory({
+    senderPublicKey: sender.public_key,
+    receiverAddress: "37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
+    amount: 249.99
+})
+```
   </TabItem>
 
   <TabItem value="Web" label="Web">
@@ -63,9 +71,9 @@ tx.sign(sender.private_key)
 
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
-  ```
+```javascript
+tx.sign(wallet.privateKey)
+```
   </TabItem>
 
   <TabItem value="Web" label="Web">
@@ -89,9 +97,9 @@ tx.broadcast()
 
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
-  ```
+```javascript
+tx.broadcast()
+```
   </TabItem>
 
   <TabItem value="Web" label="Web">
@@ -136,8 +144,8 @@ tx.sign(
 
 tx.broadcast(
     # url or ip:port of the node that will broadcast the transaction,
-    # defaul is https://lunesnode.lunes.io (MAINNET)
-    # https://lunesnode-testnet.lunes.io (TESTNET)
+    # (MAINNET) is https://lunesnode.lunes.io (defaul)
+    # (TESTNET) https://lunesnode-testnet.lunes.io
     node = "https://my-full-node.com"
 )
 ```
@@ -146,8 +154,38 @@ tx.broadcast(
 
   <TabItem value="Node.js" label="Node.js">
 
-  ```javascript
-  Comming Soon
+```javascript python {7,9,11,13,15,18,23,30}
+import lunesjs from "lunesjs"
+
+const sender = walletFactory({})
+
+const tx = lunesjs.transferTokenFactory({
+    // public key of sender
+    senderPublicKey: sender.public_key,
+    // address that will receiver tokens
+    receiverAddress: "37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
+    // amount of tokens to send
+    amount: 249.99,
+    // omit if you want to send lunes, pass only if you want to send some token
+    assetId: "E3ZpxkM2kvS78aFYG2xFfngchMgik4ogLLRa6CBJvVgz",
+    // if you want to send a different fee amount, the default is 100000
+    fee: 100000,
+    // to which chain the transaction should be mounted, the defaul is 1 (MAINNET)
+    // should be passed 0 for works in TESTNET
+    chain: 0
+})
+
+tx.sign(
+  // private key of sender for sign the transaction
+  sender.privateKey
+)
+
+tx.broadcast(
+    // url or ip:port of the node that will broadcast the transaction,
+    // (MAINNET) is https://lunesnode.lunes.io (defaul)
+    // (TESTNET) https://lunesnode-testnet.lunes.io
+    "https://my-full-node.com"
+)
   ```
   </TabItem>
 

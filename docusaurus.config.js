@@ -26,7 +26,7 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Home",
+      title: "Telescope",
       logo: {
         alt: "Lunes logo",
         src: "img/logo.svg",
