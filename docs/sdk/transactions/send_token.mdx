@@ -20,17 +20,16 @@ import TabItem from "@theme/TabItem";
 <Tabs>
   <TabItem value="Python3" label="Python3" default>
 
-```python
+```python {7-9}
 from lunespy.tx.transfer import transfer_token_factory
 from lunespy.wallet import wallet_factory
 
 sender = wallet_factory()
 
 tx = transfer_token_factory(
-    sender=sender.public_key,
-    recipient="37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
-    amount=249.99,
-    assetId="" # id of the token that should be sent, default token is Lunes
+    sender_public_key=sender.public_key,
+    receiver_address="37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
+    amount=249.99
 )
 ```
 
@@ -108,7 +107,7 @@ tx.broadcast()
 <Tabs>
   <TabItem value="Python3" label="Python3" default>
 
-```python
+```python {8,10,12,14,16,19,24,31}
 from lunespy.tx.transfer import transfer_token_factory
 from lunespy.wallet import wallet_factory
 
@@ -116,19 +115,29 @@ sender = wallet_factory()
 
 tx = transfer_token_factory(
     # public key of sender
-    sender=sender.public_key,
+    sender_public_key=sender.public_key,
     # address that will receiver tokens
-    recipient="37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
+    receiver_address="37sEXsHBBUagA3jmzHPz1ZGA3vDtCLUNs5Z",
     # amount of tokens to send
     amount=249.99,
-    # ID of the Token that should be sent, default Token is Lunes
-    assetId="",
-    # if you want to send a different fee amount, the default is 1000000
-    fee=1000000
+    # omit if you want to send lunes, pass only if you want to send some token
+    assetId="E3ZpxkM2kvS78aFYG2xFfngchMgik4ogLLRa6CBJvVgz",
+    # if you want to send a different fee amount, the default is 100000
+    fee=100000,
+    # to which chain the transaction should be mounted, the defaul is 1 (MAINNET)
+    # should be passed 0 for works in TESTNET
+    chain=0
+)
 
-).sign(sender.private_key).broadcast(
-    # url or ip:port of the node that will process the transaction,
-    # defaul is https://lunesnode-testnet.lunes.io
+tx.sign(
+  # private key of sender for sign the transaction
+  sender.private_key
+)
+
+tx.broadcast(
+    # url or ip:port of the node that will broadcast the transaction,
+    # defaul is https://lunesnode.lunes.io (MAINNET)
+    # https://lunesnode-testnet.lunes.io (TESTNET)
     node = "https://my-full-node.com"
 )
 ```
