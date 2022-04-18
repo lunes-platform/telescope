@@ -46,7 +46,7 @@ module.exports = {
         },
         {
           type: "doc",
-          label: "👾 Create NFT",
+          label: "👾 Mint NFT",
           docId: "sdk/transactions/issueNFT",
           position: "left",
         },

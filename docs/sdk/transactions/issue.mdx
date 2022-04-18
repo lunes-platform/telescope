@@ -1,10 +1,166 @@
 ---
 sidebar_position: 3
-description: How to make transactions with Lunes SDK
-keywords: [transactions, blockchain, lunes, sdk, transactions of lunes sdk, lunes sdk, generate wallet,
-generate transaction in lunes, lunes transactions, lunes wallet transactions]
+description: How to issue tokens with Lunes SDK
+keywords: [transactions, blockchain, lunes, sdk, token airdrop of lunes sdk, lunes sdk, generate wallet,
+generate transaction in lunes, lunes tokens, lunes wallet tokens]
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # 🚀 Token Airdrop
 
+## 🚨 [Read Before](/docs/sdk/transactions/tx) 🚨
+- **[Install SDK](/docs/sdk/install_sdk)**
+- **[Create Wallet](/docs/sdk/wallet/create)**
+
+## Create Token
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python {7-13}
+from lunespy.tx.issue import issue_token_factory
+from lunespy.wallet import wallet_factory
+
+sender = wallet_factory()
+
+tx = issue_token_factory(
+    description="This Token Is Not Real, Only Test",
+    sender_public_key=sender.public_key,
+    timestamp=1650250375987,
+    name="My Test Token",
+    reissuable=True,
+    quantity=10000,
+    decimals=8
+)
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+```javascript
 Comming Soon
+```
+  </TabItem>
+
+  <TabItem value="Web" label="Web">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+## Sign Transaction
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python
+tx.sign(sender.private_key)
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+```javascript
+Comming Soon
+```
+  </TabItem>
+
+  <TabItem value="Web" label="Web">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+## Broadcast Transaction
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python
+tx.broadcast()
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+```javascript
+Comming Soon
+```
+  </TabItem>
+
+  <TabItem value="Web" label="Web">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+## Full Example
+
+<Tabs>
+  <TabItem value="Python3" label="Python3" default>
+
+```python {8,10,12,14,16,18,20,25,32}
+from lunespy.tx.issue import issue_token_factory
+from lunespy.wallet import wallet_factory
+
+sender = wallet_factory()
+
+tx = issue_token_factory(
+    # public key of sender
+    sender_public_key=sender.public_key,
+    # discription about your token, max size of 1000 char
+    description="This Token Is Not Real, Only Test",
+    # name of your Token
+    name="My Test Token",
+    # total supply of this token
+    quantity=10000,
+    # token fractionability, default is 8 (0.00000001)
+    decimals=8,
+    # pass True if you want to reissue more of this token in the future
+    reissuable=True,
+    # if you want to send a different fee amount, the default is 100000000 (1 Lunes)
+    fee=100000000
+)
+
+tx.sign(
+  # private key of sender for sign the transaction
+  sender.private_key
+)
+
+tx.broadcast(
+    # url or ip:port of the node that will broadcast the transaction,
+    # (MAINNET) is https://lunesnode.lunes.io (defaul)
+    # (TESTNET) https://lunesnode-testnet.lunes.io
+    node = "https://my-full-node.com"
+)
+```
+
+  </TabItem>
+
+  <TabItem value="Node.js" label="Node.js">
+
+```javascript
+Comming Soon
+```
+  </TabItem>
+
+  <TabItem value="Web" label="Web">
+
+  ```javascript
+  Comming Soon
+  ```
+  </TabItem>
+</Tabs>
+
+
