@@ -130,7 +130,7 @@ tx = transfer_token_factory(
     amount=249.99,
     # omit if you want to send lunes, pass only if you want to send some token
     assetId="E3ZpxkM2kvS78aFYG2xFfngchMgik4ogLLRa6CBJvVgz",
-    # if you want to send a different fee amount, the default is 100000
+    # if you want to send a different fee amount, the default is 100000 (0.01 Lunes)
     fee=100000,
     # to which chain the transaction should be mounted, the defaul is 1 (MAINNET)
     # should be passed 0 for works in TESTNET
@@ -154,7 +154,7 @@ tx.broadcast(
 
   <TabItem value="Node.js" label="Node.js">
 
-```javascript python {7,9,11,13,15,18,23,30}
+```javascript {7,9,11,13,15,18,23,30}
 import lunesjs from "lunesjs"
 
 const sender = walletFactory({})
@@ -168,7 +168,7 @@ const tx = lunesjs.transferTokenFactory({
     amount: 249.99,
     // omit if you want to send lunes, pass only if you want to send some token
     assetId: "E3ZpxkM2kvS78aFYG2xFfngchMgik4ogLLRa6CBJvVgz",
-    // if you want to send a different fee amount, the default is 100000
+    // if you want to send a different fee amount, the default is 100000 (0.01 Lunes)
     fee: 100000,
     // to which chain the transaction should be mounted, the defaul is 1 (MAINNET)
     // should be passed 0 for works in TESTNET
@@ -186,7 +186,7 @@ tx.broadcast(
     // (TESTNET) https://lunesnode-testnet.lunes.io
     "https://my-full-node.com"
 )
-  ```
+```
   </TabItem>
 
   <TabItem value="Web" label="Web">
