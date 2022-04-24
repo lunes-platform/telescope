@@ -1,0 +1,15 @@
+[Unit]
+Description = Full Node of Lunes Blockchain
+After = network.target
+
+[Service]
+WorkingDirectory = /opt/lunesnode/
+ExecStart = /usr/bin/java -jar lunesnode.jar lunesnode.conf
+Restart = always
+RestartSec = 30s
+StandardOutput = journal
+StandardError = journal
+SyslogIdentifier = lunesnode
+
+[Install]
+WantedBy = multi-user.target
