@@ -10,7 +10,7 @@ module.exports = {
   organizationName: "lunes-platform",
   onBrokenMarkdownLinks: "ignore",
   staticDirectories: ["static"],
-  favicon: "img/favicon.svg",
+  favicon: "img/favicon.ico",
   projectName: "telescope",
   onBrokenLinks: "ignore",
   title: "🔭 Telescope",
