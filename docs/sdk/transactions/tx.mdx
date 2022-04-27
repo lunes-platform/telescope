@@ -7,21 +7,31 @@ generate transaction in lunes, lunes transactions, lunes wallet transactions]
 
 # 📮 Transactions
 
-
-## Native Tokens
-
-**Brief description of what Tokens, Assets and NFTs are**
+## Tokens, Assets and NFTs
 
 - **Token** are representations of something real or not, such as identity, value, product, etc...
 - **Asset** are tokens that represent some value, which can be fractionable.
 - **NFT** are a type of token, non-fractional, that represents the intellectual property of something, such as music, video, photo, etc.
 
-Your parameter `name` must be more than 4 and less than 16 characters.
+**Tokens parameter**
 
-You can choose how many tokens to create by changing the `quantity` parameter.
+| parameter | type | description |
+|-|-|-|
+| name | string | must be more than 4 and less than 16 characters. |
+| reissuable | boolean | allow you reissue your token. |
+| quantity | integer | how many tokens to create. |
+| decimal | integer | fractionate your token. |
 
-The `decimal` parameter can be useful to fractionate your token.
+## Lunes Transaction
 
-Putting `True` in the `reissuable` parameter will allow you to issue more of the same asset in the future.
+- Type: uint 1byte
+- Sender Public Key: array[uint] 32bytes
+- Token Flag: uint 1byte (0 for Lunes, 1 for Token)
+- Token Id: array[uint] 32bytes (0 for Lunes, array[uint] for Token)
+- Token Fee: uint 1byte (0 for Lunes, 1 for Token)
+- Token Fee Id: array[uint] 32bytes (0 for Lunes, array[uint] for Token)
+- Timestamp: uint 8bytes
+- Amount: uint 8bytes
+- Fee: uint 8bytes
+- Recipient Address: array[uint] 26bytes
 
-The issue Token costs **`1Lunes`**

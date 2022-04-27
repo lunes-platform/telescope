@@ -72,7 +72,7 @@ module.exports = {
       style: "dark",
       links: [
         {
-          title: "API",
+          title: "🔥 API",
           items: [
             {
               label: "mainnet",
