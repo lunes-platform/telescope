@@ -4,6 +4,9 @@ description: Intro
 keywords: [intro]
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # 🌎 Hello World!
 
 Welcome to the Telescope. Here you can find technical content for build on top of Lunes Blockchain.
@@ -25,9 +28,57 @@ To get the most out of the Telescope, you should have programming experience and
 **Decoupling components and writing accurate, readable documentation for everyone to contribute.**
 
 
+## 💡 The New Paradigm
+
+<details>
+  <summary>🔑 Authenticated</summary>
+
+**Web 2.0**
+![image](/sdk/getting_started/userweb2.png)
+
+**Lunes Protocol**
+![image](/sdk/getting_started/userlunes.png)
+
+</details>
+<details>
+  <summary>🛰 Infrastructure</summary>
+
+**Web 2.0**
+![image](/sdk/getting_started/serverweb2.png)
+
+**Lunes Protocol**
+![image](/sdk/getting_started/serverlunes.png)
+
+</details>
+<details>
+  <summary>🔗 Store Data</summary>
+
+**Web 2.0**
+![image](/sdk/getting_started/databaseweb2.png)
+
+**Lunes Protocol**
+![image](/sdk/getting_started/databaselunes.png)
+
+</details>
+
+
 ## ✅ What is Done
 
-### 🔗 Blockchain
+<Tabs>
+  <TabItem value="Lunes Node" label="🛰 Lunes Node" default>
+
+
+The **Lunes Protocol** is a decentralized and distributed network based on the LPoS consensus algorithm.
+This network can be mainnet or testnet, in mainnet the nodes work with real values of tokens, currencies, NFT and assets.
+On the other hand, testnet has "fake" tokens to provide a test environment.
+**In the dev language, mainnet is prod and testnet is stage**.
+
+Lunes Node is a fuul-node or server that has the responsibility to maintain and validate the blockchain,
+broadcast new transactions and provide an api for interaction and integration with the network.
+
+Running a Lunes Node, you become a participant in the Lunes Blockchain and can provide network resiliency,
+validate data, receive rewards and can expose an API to broadcast transactions and integrate real-world services into the blockchain.
+
 
 | MAINNET | TESTNET |          |
 |---------|---------|----------|
@@ -40,21 +91,35 @@ To get the most out of the Telescope, you should have programming experience and
 | ✅ | ✅ | Transfer Lunes |
 | 🕒 | ✅ | Sponsor Token |
 
-### 📦 SDK
 
-| Python3.6+ | JavaScript | Rust |    |
+  </TabItem>
+
+  <TabItem value="SDK" label="📦 SDK">
+
+
+The **Lunes SDK** helps developers manage their wallets and transact simply and securely,
+providing a variety of functionality for decentralized applications (DApps) and blockchain integrations.
+
+**The transaction concept here will be any type of write interaction with the lunes blockchain.**
+In this way, we can create a transaction to transfer tokens, a transaction to create tokens, a transaction to burn tokens,
+a transaction to mint an NFT, etc.
+
+| Python3.6+ | JavaScript | Rust | |
 |--------|-------|------|----|
-| ✅ | ✅ | 🕒 | **[Create Wallet](/docs/sdk/wallet/create)** |
-| ✅ | ✅ | 🕒 | **[Transfer any Tokens and NFTs](/docs/sdk/transactions/send_token)** |
-| ✅ | ✅ | 🕒 | **[Transfer Lunes](/docs/sdk/transactions/send_token)** |
-| ✅ | 🕒 | 🕒 | **[Create Tokens and NFTs](/docs/sdk/transactions/issue)** |
-| 🕒 | 🕒 | 🕒 | Reissue Tokens and NFTs |
-| 🕒 | 🕒 | 🕒 | Burn Tokens and NFTs |
+| ✅ | ✅ | 🕒 | Create Wallet |
+| ✅ | ✅ | 🕒 | Transfer Lunes |
+| ✅ | 🕒 | 🕒 | Mass Transfer Lunes |
+| 🕒 | 🕒 | 🕒 | Stake Lunes |
+| 🕒 | 🕒 | 🕒 | Withdraw Stake Lunes |
+| ✅ | 🕒 | 🕒 | Create Tokens & NFTs |
+| ✅ | ✅ | 🕒 | Transfer any Tokens & NFTs |
+| 🕒 | 🕒 | 🕒 | Mass Transfer any Tokens & NFTs |
+| 🕒 | 🕒 | 🕒 | Reissue Tokens & NFTs |
+| 🕒 | 🕒 | 🕒 | Burn Tokens & NFTs |
 | 🕒 | 🕒 | 🕒 | Sponsor Token |
 
-### 📄 Docs
 
-| | Technical reference for support in any language |
-|-|-------------------------------------------------|
-| ✅ | **[Wallet](/docs/sdk/wallet/cryptography)** |
-| 🕒 | Transfer Tx |
+  </TabItem>
+</Tabs>
+
+
