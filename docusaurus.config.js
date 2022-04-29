@@ -62,6 +62,11 @@ module.exports = {
           position: "right",
         },
         {
+          label: "Road Map",
+          href: "https://github.com/orgs/lunes-platform/projects/3/views/1",
+          position: "right",
+        },
+        {
           label: "GitHub",
           href: "https://github.com/lunes-platform/",
           position: "right",
