@@ -5,7 +5,7 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: hidden;
   gap: 200px
 }
 
