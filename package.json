@@ -1,7 +1,14 @@
 {
   "name": "telescope",
-  "version": "0.15.1",
-  "private": true,
+  "version": "0.15.2",
+  "author": {
+    "name": "Lucas Oliveira",
+    "email": "olivmath@protonmail.com",
+    "url": "https://github.com/olivmath"
+  },
+  "maintainers": [
+    "Lucas Oliveira <olivmath@protonmail.com>"
+  ],
   "scripts": {
     "fmt": "prettier -w .",
     "docusaurus": "docusaurus",
