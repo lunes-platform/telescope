@@ -27,7 +27,8 @@ This tutorial will walk you through the basics of the Docusaurus i18n system.
 
 1 - Add your language in this file ´./docusaurus.config.js´ following this pattern
 
-´´´js
+```js
+
 i18n: {
     defaultLocale: "en",
     locales: ["en", "pt", "fr", "es"],
@@ -52,8 +53,8 @@ i18n: {
         direction: "ltr",
         htmlLang: "es-ES",
       },
-    },
-´´´
+    }
+```
 
 2 - Start the Telescope in dev mode, using the locale of your choice:
 
